@@ -12,8 +12,8 @@
         <div class="navbar-nav mx-auto bg-light rounded pe-4 py-3 py-lg-3">
             <a href="./" class="nav-item nav-link me-5">Home</a>
             <a href="#about" class="nav-item nav-link me-3">About Us</a>
-            <a href="service.html" class="nav-item nav-link me-3">Why choose us?</a>
-            <a href="contact.html" class="nav-item nav-link me-3">Create a free account</a>
+            <a href="#features" class="nav-item nav-link me-3">Why choose us?</a>
+            <a href="./signup" class="nav-item nav-link me-3">Create a free account</a>
         </div>
     </div>
     <a href="./signin" class="btn btn-primary px-3 d-none d-lg-block">Sign-In</a>
