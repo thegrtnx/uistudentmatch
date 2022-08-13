@@ -123,6 +123,11 @@
     .navbar .nav-item .dropdown-menu {
         padding-left: 30px;
     }
+
+    #imgg {
+
+        display: none;
+    }
 }
 
 @media (min-width: 992px) {

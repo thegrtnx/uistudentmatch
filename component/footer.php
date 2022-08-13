@@ -4,7 +4,7 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h1 class="text-white mb-4">
-                    <img class="img-fluid me-3" src="img/icon/icon-02-light.png" alt="" />Unistudent Match
+                    <img class="img-fluid me-3" src="img/LOGO 2.png" alt="" />
                 </h1>
                 <p>
                     we created Unistudent Match which is designed to help you connect with the right person in a
