@@ -1,6 +1,6 @@
 <?php
 //creating the database to use
-$con = mysqli_connect("localhost","root","","vogue");
+$con = mysqli_connect("localhost","root","","unistud");
 //HWq3UAf2nCbRA3uIAmTheLord2022
 //$con = mysqli_connect("localhost","samosala_vogue","securemelikekilode","samosala_vogue");
 

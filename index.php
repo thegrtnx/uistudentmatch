@@ -276,8 +276,6 @@ include("component/head.php");
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-
-
     <!-- JavaScript Libraries -->
     <script src=" js/jquery.min.js "></script>
     <script src=" js/bootstrap.min.js "></script>

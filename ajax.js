@@ -24,6 +24,8 @@ $(document).ready(function () {
     var usname = $("#usname").val();
     var catgy = $("#catgy").val();
     var email = $("#email").val();
+    var inst = $("#inst").val();
+    var abt = $("#abt").val();
     var pword = $("#pword").val();
     var cpword = $("#cpword").val();
     var nref = $("#ref").val();
@@ -47,6 +49,12 @@ $(document).ready(function () {
         if (email == "" || email == null) {
           $("#emmsg").html("Invalid email address");
         } else {
+          if (abt == "" || abt == null) {
+            $("#abtmsg").html("Please tells us about yourself");
+          } else {
+            if (inst == "" || inst == null) {
+              $("#instmsg").html("Kindly input your institution name");
+            } else {
           if (pword == "" || pword == null) {
             $("#pwmsg").html("Please create a secured password");
           } else {
@@ -57,7 +65,7 @@ $(document).ready(function () {
                 $("#cpwmsg").html("Password does not match");
               } else {
                 $("#msg").html(
-                  '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">'
+                  '<img style="width: 100px; height: 100px" src="img/loading.gif">'
                 );
 
                 $.ajax({
@@ -69,9 +77,10 @@ $(document).ready(function () {
                     email: email,
                     pword: pword,
                     cpword: cpword,
-                    catgy,
-                    catgy,
+                    catgy, catgy,
                     ref: ref,
+                    abt: abt,
+                    inst: inst
                   },
                   success: function (data) {
                     $("#msg").html(data);
@@ -80,6 +89,8 @@ $(document).ready(function () {
               }
             }
           }
+        }
+      }
         }
       }
     }
@@ -95,7 +106,7 @@ $(document).ready(function () {
     var otpp = "dummy";
 
     $("#vmsg").html(
-      '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">'
+      '<img style="width: 100px; height: 100px" src="img/loading.gif">'
     );
 
     $.ajax({
@@ -131,7 +142,7 @@ $(document).ready(function () {
             var votp = digit1 + digit2 + digit3 + digit4;
 
             $("#vmsg").html(
-              '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">'
+              '<img style="width: 100px; height: 100px" src="img/loading.gif">'
             );
 
             $.ajax({
@@ -184,7 +195,7 @@ $(document).ready(function () {
         $("#lupmsg").html("Invalid password inputted");
       } else {
         $("#lmsg").html(
-          '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">'
+          '<img style="width: 100px; height: 100px" src="img/loading.gif">'
         );
         $.ajax({
           type: "post",
@@ -208,7 +219,7 @@ $(document).ready(function () {
       $("#fmsg").html("Please insert your email");
     } else {
       $("#fmsg").html(
-        '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">'
+        '<img style="width: 100px; height: 100px" src="img/loading.gif">'
       );
 
       $.ajax({
@@ -239,7 +250,7 @@ $(document).ready(function () {
           $("#umsg").html("Password does not match!");
         } else {
           $("#umsg").html(
-            '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">'
+            '<img style="width: 100px; height: 100px" src="img/loading.gif">'
           );
 
           $.ajax({
@@ -353,7 +364,7 @@ $(document).ready(function () {
         $("#pymsg").html("The minimum amount you can fund is ₦100");
       } else {
         $("#pymsg").html(
-          '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">'
+          '<img style="width: 100px; height: 100px" src="img/loading.gif">'
         );
 
         var txt = $("#txt").text();
@@ -393,7 +404,7 @@ $(document).ready(function () {
   //buy book
   $("#bkkpaybtn").click(function () {
     $("#pymsg").html(
-      '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">'
+      '<img style="width: 100px; height: 100px" src="img/loading.gif">'
     );
 
     var amt = $("#bkamt").text();
@@ -416,7 +427,7 @@ $(document).ready(function () {
   //upgrade account
   $("#upgrd").click(function () {
     $("#note").html(
-      '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">'
+      '<img style="width: 100px; height: 100px" src="img/loading.gif">'
     );
 
     var upgrade = 'author';

@@ -118,74 +118,9 @@ function usname_exist($usname) {
 }
 
 
-function book_exist($booktitle) {
-
-    $sql = "SELECT * FROM `books` WHERE `book_title` = '$booktitle'";
-    $result = query($sql);
-
-    if(row_count($result) == 1) {
-
-        return true;
-
-    }else {
-
-        return false;
-    } 
-}
-
-
-function role_director($username, $role) {
-
-                //redirect to user dashboard
-                if($role == 'user' || $role == 'USER') {
-                    
-                    $_SESSION['login'] = $username;
-
-                    echo '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">';    
-
-                    echo '<script>window.location.href ="./"</script>'; 
-                } else {
-
-                    //redirect to author dashbaord
-                    if($role == 'author' || $role == 'AUTHOR') {
-
-                        $_SESSION['login'] = $username;
-
-                        echo '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">';    
-
-                        echo '<script>window.location.href ="author/./"</script>';  
-
-
-                    } else {
-
-
-                        //redirect to publisher dashboard
-                        if($role == 'publisher' || $role == 'PUBLISHER') {
-
-                        $_SESSION['login'] = $username;
-
-                        echo '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">';    
-
-                        echo '<script>window.location.href ="publisher/./"</script>';   
-
-
-                        } else {
-
-                            echo '<img style="width: 100px; height: 100px" src="assets/img/loading.gif">';    
-
-                            echo '<script>window.location.href ="./signin"</script>';
-                        }
-                    }
-
-                }
-
-
-}
-
-
 
 /** VALIDATE USER REGISTRATION **/
-if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) && isset($_POST['email']) && isset($_POST['pword']) && isset($_POST['cpword']) && isset($_POST['ref'])) {
+if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) && isset($_POST['email']) && isset($_POST['pword']) && isset($_POST['cpword']) && isset($_POST['ref']) && isset($_POST['inst']) && isset($_POST['abt'])) {
 
     $fname          = clean(escape($_POST['fname']));
     $usname         = clean(escape($_POST['usname']));
@@ -194,28 +129,10 @@ if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) &
     $pword          = clean(escape($_POST['pword']));
     $cpword         = clean(escape($_POST['cpword']));
     $ref            = clean(escape($_POST['ref']));
+    $inst           = clean(escape($_POST['inst']));
+    $abt            = clean(escape($_POST['abt']));
 
-        
-    if($caty == "User (I am here to read books)") {
-
-        $catgy = 'user';
-
-    } else {
-
-    if($caty == "Author (I just want to publish my books and read other author books)") {
-
-           $catgy = 'author';
-            
-        } else {
-
-    if($caty == "Publisher (I want to publish books for other authors)") {
-
-            $catgy = 'publisher';
-
-            }
-        }
-    }
-
+   
         if(email_exist($email)) {
 
             echo "This email address is already registered. <br/> Please sign in with your registered email details or enter a new email address.";
@@ -228,7 +145,7 @@ if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) &
             } else {
 
 
-                register($fname, $usname, $email, $pword, $ref, $catgy);
+                register($fname, $usname, $email, $pword, $ref, $catgy, $inst, $abt);
                 
             }
 
@@ -239,7 +156,7 @@ if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) &
     
 
 /** REGISTER USER **/
-function register($fname, $usname, $email, $pword, $ref, $catgy) {
+function register($fname, $usname, $email, $pword, $ref, $catgy, $inst, $abt) {
 
     $fnam = escape($fname);
     $usname = escape($usname);
@@ -253,8 +170,8 @@ function register($fname, $usname, $email, $pword, $ref, $catgy) {
         
     $activator = otp();
     
-    $sql = "INSERT INTO users(`idd`, `fullname`, `usname`, `email`, `password`, `role`, `date_reg`, `status`, `active`, `lastseen`, `ref`, `wallet`)";
-    $sql.= " VALUES('1', '$fnam', '$usname', '$emai', '$pwor', '$catgy', '$datereg', '$activator', '0', '$datereg', '$ref', '0')";
+    $sql = "INSERT INTO users(`idd`, `fullname`, `usname`, `email`, `password`, `role`, `date_reg`, `status`, `active`, `lastseen`, `ref`, `wallet`, `bio`, `inst`)";
+    $sql.= " VALUES('1', '$fnam', '$usname', '$emai', '$pwor', '$catgy', '$datereg', '$activator', '0', '$datereg', '$ref', '0', '$abt', '$inst')";
     $result = query($sql);
 
     //redirect to verify function
@@ -263,17 +180,16 @@ function register($fname, $usname, $email, $pword, $ref, $catgy) {
     $msg = <<<DELIMITER
 
     <tr>
-    <p style="color: black; font-weight: bold; margin-top: 24px !important;">👋 Welcome to Books In Vogue. </p>
+    <p style="color: black; font-weight: bold; margin-top: 24px !important;">👋 Welcome to Unistudent Match. </p>
     </tr>
     <tr>
-    <p style="color: black; margin-top: 8px !important;">✨ You are one-click towards activating your account and becoming part of the Books In
-    Vogue Tribe</p>
+    <p style="color: black; margin-top: 8px !important;">✨ You are one-click towards activating your account and becoming part of the Tribe</p>
     </tr>
     <tr>
     <p style="color: black; margin-top: 8px !important;">⬇️ Kindly use the code below to activate your account for FREE!</p>
     </tr>
     <tr>
-    <p style="color: black; margin-top: 8px !important;">🔒 Do not share this code outside Books In Vogue website or Mobile App</p>
+    <p style="color: black; margin-top: 8px !important;">🔒 Do not share this code outside our website or Mobile App</p>
     </tr>
     <tr>
     <div style="text-align: center !important; margin-top: 24px !important; margin-bottom: 8px !important; justify-content: center !important;">
@@ -299,9 +215,9 @@ function register($fname, $usname, $email, $pword, $ref, $catgy) {
 function mail_mailer($email, $activator, $subj, $msg) {
 
     $to = $email;
-    $from = "info@booksinvogue.com.ng";
+    $from = "info@unistudentmatch.com";
 
-    $headers = "From: Booksinvogue ". $from . "\r\n";
+    $headers = "From: Unistudent Match ". $from . "\r\n";
     $headers .= "Reply-To: ". $from . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=\"iso-8859-1\"\n";
@@ -324,7 +240,7 @@ function mail_mailer($email, $activator, $subj, $msg) {
 
 
                 <div style="text-align: center !important; justify-content: center !important;">
-                <img style="max-width: 100%; height: auto; vertical-align: middle; box-sizing: border-box; width: 120px; margin-top: 24px !important;" src="https://dashboard.booksinvogue.com.ng/assets/img/logo.png">
+                <img style="max-width: 100%; height: auto; vertical-align: middle; box-sizing: border-box; width: 120px; margin-top: 24px !important;" src="https://unistudentmatch.com/img/logo.png">
                 </div>
 
                 <div style="margin-right: 5%; margin-left: 5%;">
@@ -342,12 +258,9 @@ function mail_mailer($email, $activator, $subj, $msg) {
 
 
                 <div style="text-align: center !important; margin-top: 19px !important; justify-content: center !important;">
-                <p style="color: grey">&copy; Team Book In Vogue </p>
+                <p style="color: grey">&copy; Unistudent Match Team </p>
 
-                    <p style="color: grey; margin-bottom: 32px !important;">Developed with 💖 by:  <a style="text-decoration: none; color: #696cff;" href="https://www.google.com/search?client=opera&q=abolade+greatness&sourceid=opera&ie=UTF-8&oe=UTF-8"
-                        target="_blank">Abolade Greatness</a></p>
-
-
+    
                 </div>
 
                <tr></tr> 
@@ -358,7 +271,7 @@ function mail_mailer($email, $activator, $subj, $msg) {
             
     DELIMITER;
     
-    $send = mail($to, $subject, $body, $headers, '-finfo@booksinvogue.com.ng');
+    $send = mail($to, $subject, $body, $headers, '-finfo@unistudentmatch.com');
 }
 
 
@@ -366,9 +279,9 @@ function mail_mailer($email, $activator, $subj, $msg) {
 function notify_user($username, $email, $msg, $subj) {
 
     $to = $email;
-    $from = "info@booksinvogue.com.ng";
+    $from = "info@unistudentmatch.com";
 
-    $headers = "From: Booksinvogue ". $from . "\r\n";
+    $headers = "From: Unistudent Match ". $from . "\r\n";
     $headers .= "Reply-To: ". $from . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=\"iso-8859-1\"\n";
@@ -392,7 +305,7 @@ function notify_user($username, $email, $msg, $subj) {
 
 
                 <div style="text-align: center !important; justify-content: center !important;">
-                <img style="max-width: 100%; height: auto; vertical-align: middle; box-sizing: border-box; width: 120px; margin-top: 24px !important;" src="https://dashboard.booksinvogue.com.ng/assets/img/logo.png">
+                <img style="max-width: 100%; height: auto; vertical-align: middle; box-sizing: border-box; width: 120px; margin-top: 24px !important;" src="https://unistudentmatch.com/img/logo.png">
                 </div>
 
                 <div style="margin-right: 5%; margin-left: 5%;">
@@ -410,11 +323,7 @@ function notify_user($username, $email, $msg, $subj) {
 
 
                 <div style="text-align: center !important; margin-top: 19px !important; justify-content: center !important;">
-                <p style="color: grey">&copy; Team Book In Vogue </p>
-
-                    <p style="color: grey; margin-bottom: 32px !important;">Developed with 💖 by:  <a style="text-decoration: none; color: #696cff;" href="https://www.google.com/search?client=opera&q=abolade+greatness&sourceid=opera&ie=UTF-8&oe=UTF-8"
-                        target="_blank">Abolade Greatness</a></p>
-
+                <p style="color: grey">&copy; Team Unistudent Match</p>
 
                 </div>
 
@@ -426,80 +335,9 @@ function notify_user($username, $email, $msg, $subj) {
     
     DELIMITER;
     
-    $send = mail($to, $subject, $body, $headers, '-finfo@booksinvogue.com.ng');
+    $send = mail($to, $subject, $body, $headers, '-finfo@unistudentmatch.com');
     
 }
-
-
-
-//notify author
-function notify_author($auemail, $aumsg, $ausubj) {
-
-    $to = $auemail;
-    $from = "info@booksinvogue.com.ng";
-
-    $headers = "From: Booksinvogue ". $from . "\r\n";
-    $headers .= "Reply-To: ". $from . "\r\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=\"iso-8859-1\"\n";
-    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
-    $headers .= "X-Priority: 1 (Highest)\n";
-    $headers .= "Priority: urgent\n";
-    $headers .= "X-MSMail-Priority: High\n";
-    $headers .= "Importance: High\n";
-
-    $subject = $ausubj;
-
-    $body = <<<DELIMITER
-
-
-            <html>
-                <meta charset="utf-8" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-                <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-
-                <body style="background-color: #eaebed;  font-family: sans-serif;  font-size: 14px; line-height: 1.4; margin-bottom: 2rem !important; padding: 0;">
-
-
-                <div style="text-align: center !important; justify-content: center !important;">
-                <img style="max-width: 100%; height: auto; vertical-align: middle; box-sizing: border-box; width: 120px; margin-top: 24px !important;" src="https://dashboard.booksinvogue.com.ng/assets/img/logo.png">
-                </div>
-
-                <div style="margin-right: 5%; margin-left: 5%;">
-
-                    <div style="padding-right: 1.105rem; padding-left: 1.105rem; margin-top: 24px !important; background-color: #fff; position: relative; display: flex; flex-direction: column; height: auto; word-wrap: break-word; background-clip: border-box; border: 0 solid #d9dee3; border-radius: 8px;">
-
-                   $aumsg
-
-
-                   </div>
-
-
-
-                </div>
-
-
-                <div style="text-align: center !important; margin-top: 19px !important; justify-content: center !important;">
-                <p style="color: grey">&copy; Team Book In Vogue </p>
-
-                    <p style="color: grey; margin-bottom: 32px !important;">Developed with 💖 by:  <a style="text-decoration: none; color: #696cff;" href="https://www.google.com/search?client=opera&q=abolade+greatness&sourceid=opera&ie=UTF-8&oe=UTF-8"
-                        target="_blank">Abolade Greatness</a></p>
-
-
-                </div>
-
-               <tr></tr> 
-
-
-              </body>
-            </html>
-    
-    DELIMITER;
-    
-    $send = mail($to, $subject, $body, $headers, '-finfo@booksinvogue.com.ng');
-    
-}
-
 
 
 /** RESEND OTP */
@@ -592,22 +430,22 @@ if(isset($_POST['votp'])) {
                 $msg = <<<DELIMITER
 
                             <tr>
-                            <p style="color: black; font-weight: bold; margin-top: 24px !important;">🥳 Welcome to the Books In Vogue Tribe </p>
+                            <p style="color: black; font-weight: bold; margin-top: 24px !important;">🥳 Welcome to Unistudent Match </p>
                             </tr>
                             <tr>
                             <p style="color: black; margin-top: 8px !important;">Hi there,</p>
                             </tr>
                             <tr>
-                            <p style="color: black; margin-top: 8px !important;">We are super excited to have you on Books In Vogue</p>
+                            <p style="color: black; margin-top: 8px !important;">We are super excited to have you on Unistudent Match</p>
                             </tr>
                             <tr>
-                            <p style="color: black; margin-top: 8px !important;">Books In Vogue is a platform developed to help you read amazing books, upload your own book(s) or publish books for other authors.</p>
+                            <p style="color: black; margin-top: 8px !important;">Unistudent Match is a platform designed to help you connect with the right person in a halal way.</p>
                             </tr>
                             <tr>
                             <p style="color: black; margin-top: 8px !important;">We will continue to enhance the experience of our interfaces to ensure that you enjoy a seamless reading feel.</p>
                             </tr>
                             <tr>
-                            <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://booksinvogue.com.ng/contact">live chat support panel</a></p>
+                            <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
                             </tr>
                             <tr>
                             <p style="color: black; margin-top: 8px !important;">Do have a wonderful book experience</a></p>
@@ -622,7 +460,10 @@ if(isset($_POST['votp'])) {
                 notify_user($username, $email, $msg, $subj);
 
                 //redirect to user dashboard according to user category
-                role_director($username, $role);
+                echo 'Loading... Please Wait!';
+                $_SESSION['login'] = $user;
+                
+                echo '<script>window.location.href ="dashboard/./"</script>';
 
                 } else {
                     
@@ -817,7 +658,7 @@ if(isset($_POST['fgpword']) && isset($_POST['fgcpword'])) {
                     <p style="color: black; margin-top: 8px !important;">If you didn't perform this action, kindly reply to this mail so we can help get back your account.</p>
                     </tr>
                     <tr>
-                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://booksinvogue.com.ng/contact">live chat support panel</a></p>
+                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
                     </tr>
                     <tr>
                     <p style="color: black; margin-top: 8px !important;">Do have a wonderful book experience</a></p>
@@ -914,15 +755,15 @@ if(isset($_POST['dataid'])) {
         $price = "₦".number_format($row['selling_price']);
         $sold = $row['sold'];
 
-        $image = "../https://dashboard.booksinvogue.com.ng/assets/bookscover/".$row['book_cover'];
+        $image = "../https://dashboard.unistudentmatch.com/assets/bookscover/".$row['book_cover'];
 
         if(file_exists($image)){
 
-            $imager = "https://dashboard.booksinvogue.com.ng/assets/bookscover/".$row['book_cover'];
+            $imager = "https://dashboard.unistudentmatch.com/assets/bookscover/".$row['book_cover'];
             
         } else {
 
-            $imager = "https://dashboard.booksinvogue.com.ng/assets/img/cover.jpg";
+            $imager = "https://dashboard.unistudentmatch.com/assets/img/cover.jpg";
         }
 
 
@@ -1106,7 +947,7 @@ if(isset($_POST['amt']) && isset($_POST['bkid']) && isset($_POST['authoremail'])
                     <p style="color: black; margin-top: 8px !important;">$note</p>
                     </tr>
                     <tr>
-                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://booksinvogue.com.ng/contact">live chat support panel</a></p>
+                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
                     </tr>
                     <tr>
                     <p style="color: black; margin-top: 8px !important;">Keep having a wonderful book experience</a></p>
@@ -1134,7 +975,7 @@ if(isset($_POST['amt']) && isset($_POST['bkid']) && isset($_POST['authoremail'])
                     <tr>
                     <p style="color: black; margin-top: 8px !important;">Kindly login to your account to review your royalty.</p>
                     </tr>
-                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://booksinvogue.com.ng/contact">live chat support panel</a></p>
+                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
                     </tr>
                     <tr>
                     <p style="color: black; margin-top: 8px !important;">Keep having a wonderful book experience</a></p>
@@ -1720,7 +1561,7 @@ function book_img($target_file1, $target_file2) {
             <p style="color: black; margin-top: 8px !important;">Your book has been successfully published and is not available for purchase and reading</p>
             </tr>
             <tr>
-            <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://booksinvogue.com.ng/contact">live chat support panel</a></p>
+            <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
             </tr>
             <tr>
             <p style="color: black; margin-top: 8px !important;">Keep having a wonderful book experience</a></p>
