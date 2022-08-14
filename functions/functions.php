@@ -163,6 +163,7 @@ function register($fname, $usname, $email, $pword, $ref, $catgy, $inst, $abt) {
     $emai = escape($email);
     $pwor = md5($pword);
     $ref  = escape($ref);
+    $abtt = trim($abt);
 
     $datereg = date("Y-m-d h:i:s");
 
@@ -171,7 +172,7 @@ function register($fname, $usname, $email, $pword, $ref, $catgy, $inst, $abt) {
     $activator = otp();
     
     $sql = "INSERT INTO users(`idd`, `fullname`, `usname`, `email`, `password`, `role`, `date_reg`, `status`, `active`, `lastseen`, `ref`, `wallet`, `bio`, `inst`)";
-    $sql.= " VALUES('1', '$fnam', '$usname', '$emai', '$pwor', '$catgy', '$datereg', '$activator', '0', '$datereg', '$ref', '0', '$abt', '$inst')";
+    $sql.= " VALUES('1', '$fnam', '$usname', '$emai', '$pwor', '$catgy', '$datereg', '$activator', '0', '$datereg', '$ref', '0', '$abtt', '$inst')";
     $result = query($sql);
 
     //redirect to verify function
@@ -696,40 +697,19 @@ function user_details() {
         $sql = "SELECT * FROM users WHERE `usname` = '$data' OR `email` = '$data'";
         $rsl = query($sql);
 
-        //get admin details for authors
-        $rem = "SELECT * FROM admin";
-        $res = query($rem);
-
-        $GLOBALS['t_admin'] = mysqli_fetch_array($res);
-
-        //check if user details is valid
-        if(row_count($rsl) == '') {
-
-            redirect("./logout");
-            
-        } else {
-
         $GLOBALS['t_users'] = mysqli_fetch_array($rsl);
 
         //set passport for empty passport
-        if($GLOBALS['t_users']['passport'] == null && $GLOBALS['t_users']['role'] == 'user') {
+        if($GLOBALS['t_users']['passport'] == null && $GLOBALS['t_users']['passport'] == '') {
             
-            $GLOBALS['passport'] = 'assets/img/user.png';
+            $GLOBALS['passport'] = 'img/user.png';
 
         } else {
 
-            if($GLOBALS['t_users']['passport'] == null && $GLOBALS['t_users']['role'] == 'author' || $GLOBALS['t_users']['role'] == 'AUTHOR' || $GLOBALS['t_users']['role'] == 'publisher' || $GLOBALS['t_users']['role'] == 'PUBLISHER') {
-                
-                $GLOBALS['passport'] = '../assets/img/user.png';
-            } else {
-
-                $GLOBALS['passport'] = '../assets/img/'.$GLOBALS['t_users']['passport'];
+                $GLOBALS['passport'] = 'img/'.$GLOBALS['t_users']['passport'];
             }
 
         }
-    }
-
-    }
 }
 
 
@@ -1045,6 +1025,8 @@ if(isset($_POST['amt']) && isset($_POST['bkid']) && isset($_POST['authoremail'])
 
 
 //***** AUTHOR PAGE **********/
+
+
 //get account name
 if(isset($_POST['bank']) && isset($_POST['acctn']) && isset($_POST['trd'])) {
 

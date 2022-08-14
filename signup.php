@@ -207,7 +207,7 @@ input[type=number] {
 
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 450px" id="imgg">
                     <div class="position-relative rounded overflow-hidden h-100">
-                        <img src="img/6.jpg" class="position-relative w-100 h-100">
+                        <img src="img/sign.jpg" class="position-relative w-100 h-100">
                     </div>
                 </div>
             </div>

@@ -30,13 +30,13 @@ include("component/head.php");
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/2.jpg" alt="Image" />
+                    <img class="w-100" src="img/7.jpg" alt="Image" />
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-6 col-sm-1">
                                     <h1 class="display-3 text-light fw-bold mb-4 animated slideInDown">
-                                        All It Takes Is A Little Faith
+                                        Find your perfect university partner
                                     </h1>
                                     <p class="fs-5 text-white mb-5">
                                         Register For FREE! <br /> No Credit Card

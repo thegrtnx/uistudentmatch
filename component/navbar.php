@@ -37,7 +37,8 @@
         <a href="./contact" class="nav-item nav-link me-3">Contact Us</a>
 
     </div>
-    <a style="text-decoration: none;" href="dashboard/./" class="nav-item nav-link me-5">Welcome </a>
+    <a style="text-decoration: none;" href="dashboard/./" class="nav-item nav-link me-5">Welcome
+        <?php echo ucfirst($t_users['usname']) ?></a>
     <a href="./logout" class="nav-item text-white nav-link me-5 btn btn-primary px-3 ">Logout</a>
 </div>
 </nav>
