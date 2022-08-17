@@ -145,7 +145,7 @@ if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) &
             } else {
 
 
-                register($fname, $usname, $email, $pword, $ref, $catgy, $inst, $abt);
+                register($fname, $usname, $email, $pword, $ref, $caty, $inst, $abt);
                 
             }
 
@@ -156,7 +156,7 @@ if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) &
     
 
 /** REGISTER USER **/
-function register($fname, $usname, $email, $pword, $ref, $catgy, $inst, $abt) {
+function register($fname, $usname, $email, $pword, $ref, $caty, $inst, $abt) {
 
     $fnam = escape($fname);
     $usname = escape($usname);
@@ -172,7 +172,7 @@ function register($fname, $usname, $email, $pword, $ref, $catgy, $inst, $abt) {
     $activator = otp();
     
     $sql = "INSERT INTO users(`idd`, `fullname`, `usname`, `email`, `password`, `role`, `date_reg`, `status`, `active`, `lastseen`, `ref`, `wallet`, `bio`, `inst`)";
-    $sql.= " VALUES('1', '$fnam', '$usname', '$emai', '$pwor', '$catgy', '$datereg', '$activator', '0', '$datereg', '$ref', '0', '$abtt', '$inst')";
+    $sql.= " VALUES('1', '$fnam', '$usname', '$emai', '$pwor', '$caty', '$datereg', '$activator', '0', '$datereg', '$ref', '0', '$abtt', '$inst')";
     $result = query($sql);
 
     //redirect to verify function
