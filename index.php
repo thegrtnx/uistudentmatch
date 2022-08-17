@@ -16,9 +16,9 @@ include("component/head.php");
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-6 col-sm-1">
+                                <div class="col-lg-6 col-sm-6 col-sm-1">
                                     <h1 style="color: lightgrey" class="display-3 fw-bold mb-4 animated slideInDown">
-                                        Believe In Your Happily Ever After ...
+                                        Believe In Your Happily Ever After
                                     </h1>
                                     <p style="color: lightgrey" class="fs-5 mb-5">
                                         Search Practising Single Muslims Now!
