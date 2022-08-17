@@ -216,7 +216,7 @@ function register($fname, $usname, $email, $pword, $ref, $catgy, $inst, $abt) {
 function mail_mailer($email, $activator, $subj, $msg) {
 
     $to = $email;
-    $from = "info@unistudentmatch.com";
+    $from = "info@unistudentsmatch.com";
 
     $headers = "From: Unistudent Match ". $from . "\r\n";
     $headers .= "Reply-To: ". $from . "\r\n";
@@ -241,7 +241,7 @@ function mail_mailer($email, $activator, $subj, $msg) {
 
 
                 <div style="text-align: center !important; justify-content: center !important;">
-                <img style="max-width: 100%; height: auto; vertical-align: middle; box-sizing: border-box; width: 120px; margin-top: 24px !important;" src="https://unistudentmatch.com/img/logo.png">
+                <img style="max-width: 100%; height: auto; vertical-align: middle; box-sizing: border-box; width: 120px; margin-top: 24px !important;" src="https://unistudentsmatch.com/img/logo.png">
                 </div>
 
                 <div style="margin-right: 5%; margin-left: 5%;">
@@ -272,7 +272,7 @@ function mail_mailer($email, $activator, $subj, $msg) {
             
     DELIMITER;
     
-    $send = mail($to, $subject, $body, $headers, '-finfo@unistudentmatch.com');
+    $send = mail($to, $subject, $body, $headers, '-finfo@unistudentsmatch.com');
 }
 
 
@@ -280,7 +280,7 @@ function mail_mailer($email, $activator, $subj, $msg) {
 function notify_user($username, $email, $msg, $subj) {
 
     $to = $email;
-    $from = "info@unistudentmatch.com";
+    $from = "info@unistudentsmatch.com";
 
     $headers = "From: Unistudent Match ". $from . "\r\n";
     $headers .= "Reply-To: ". $from . "\r\n";
@@ -306,7 +306,7 @@ function notify_user($username, $email, $msg, $subj) {
 
 
                 <div style="text-align: center !important; justify-content: center !important;">
-                <img style="max-width: 100%; height: auto; vertical-align: middle; box-sizing: border-box; width: 120px; margin-top: 24px !important;" src="https://unistudentmatch.com/img/logo.png">
+                <img style="max-width: 100%; height: auto; vertical-align: middle; box-sizing: border-box; width: 120px; margin-top: 24px !important;" src="https://unistudentsmatch.com/img/logo.png">
                 </div>
 
                 <div style="margin-right: 5%; margin-left: 5%;">
@@ -336,7 +336,7 @@ function notify_user($username, $email, $msg, $subj) {
     
     DELIMITER;
     
-    $send = mail($to, $subject, $body, $headers, '-finfo@unistudentmatch.com');
+    $send = mail($to, $subject, $body, $headers, '-finfo@unistudentsmatch.com');
     
 }
 
@@ -446,7 +446,7 @@ if(isset($_POST['votp'])) {
                             <p style="color: black; margin-top: 8px !important;">We will continue to enhance the experience of our interfaces to ensure that you enjoy a seamless reading feel.</p>
                             </tr>
                             <tr>
-                            <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
+                            <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentsmatch.com/contact">live chat support panel</a></p>
                             </tr>
                             <tr>
                             <p style="color: black; margin-top: 8px !important;">Do have a wonderful book experience</a></p>
@@ -661,7 +661,7 @@ if(isset($_POST['fgpword']) && isset($_POST['fgcpword'])) {
                     <p style="color: black; margin-top: 8px !important;">If you didn't perform this action, kindly reply to this mail so we can help get back your account.</p>
                     </tr>
                     <tr>
-                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
+                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentsmatch.com/contact">live chat support panel</a></p>
                     </tr>
                     <tr>
                     <p style="color: black; margin-bottom: 32px !important;">⚡ Best Regards</p>
@@ -736,15 +736,15 @@ if(isset($_POST['dataid'])) {
         $price = "₦".number_format($row['selling_price']);
         $sold = $row['sold'];
 
-        $image = "../https://dashboard.unistudentmatch.com/assets/bookscover/".$row['book_cover'];
+        $image = "../https://dashboard.unistudentsmatch.com/assets/bookscover/".$row['book_cover'];
 
         if(file_exists($image)){
 
-            $imager = "https://dashboard.unistudentmatch.com/assets/bookscover/".$row['book_cover'];
+            $imager = "https://dashboard.unistudentsmatch.com/assets/bookscover/".$row['book_cover'];
             
         } else {
 
-            $imager = "https://dashboard.unistudentmatch.com/assets/img/cover.jpg";
+            $imager = "https://dashboard.unistudentsmatch.com/assets/img/cover.jpg";
         }
 
 
@@ -928,7 +928,7 @@ if(isset($_POST['amt']) && isset($_POST['bkid']) && isset($_POST['authoremail'])
                     <p style="color: black; margin-top: 8px !important;">$note</p>
                     </tr>
                     <tr>
-                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
+                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentsmatch.com/contact">live chat support panel</a></p>
                     </tr>
                     <tr>
                     <p style="color: black; margin-top: 8px !important;">Keep having a wonderful book experience</a></p>
@@ -956,7 +956,7 @@ if(isset($_POST['amt']) && isset($_POST['bkid']) && isset($_POST['authoremail'])
                     <tr>
                     <p style="color: black; margin-top: 8px !important;">Kindly login to your account to review your royalty.</p>
                     </tr>
-                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
+                    <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentsmatch.com/contact">live chat support panel</a></p>
                     </tr>
                     <tr>
                     <p style="color: black; margin-top: 8px !important;">Keep having a wonderful book experience</a></p>
@@ -1544,7 +1544,7 @@ function book_img($target_file1, $target_file2) {
             <p style="color: black; margin-top: 8px !important;">Your book has been successfully published and is not available for purchase and reading</p>
             </tr>
             <tr>
-            <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
+            <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentsmatch.com/contact">live chat support panel</a></p>
             </tr>
             <tr>
             <p style="color: black; margin-top: 8px !important;">Keep having a wonderful book experience</a></p>
