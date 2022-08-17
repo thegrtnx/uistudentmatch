@@ -48,6 +48,7 @@ input[type=number] {
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
+
                 <div style="display:none" id="verify" class="justify-content-center text-center">
                     <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false"
                         autocomplete="off">
@@ -76,64 +77,71 @@ input[type=number] {
 
                         <p class="text-center">
                             <span>Didn't get an OTP?</span>
-                            <a href="#" id="rotp">
+                            <a style="text-decoration: none;" href="#" id="rotp">
                                 <span>Resend OTP</span>
                             </a>
                         </p>
                     </form>
                 </div>
 
+                <div style="display:none" id="updatepword">
+                    <form id="formAuthentication" class="mb-3" method="POST">
+                        <h1 class="display-6 mb-2 fw-bold">
+                            Update your password ✅
+                        </h1>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Create new password</label>
+                            <input type="password" class="form-control" id="pword" name="pword"
+                                placeholder="create a new password" autofocus />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Re-type the new password here</label>
+                            <input type="password" class="form-control" id="cpword" name="cpword"
+                                placeholder="re-type your password" autofocus />
+                        </div>
+
+                        <h6 style="font-size: 15px" class="text-danger  text-center mt-1" id="umsg"></h6>
+                        <button type="button" id="updf" class="btn btn-primary d-grid w-100">Update
+                            Password</button>
+
+                        <div class="text-center">
+                            <a href="./signin" class="d-flex align-items-center justify-content-center mt-2">
+                                <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
+                                Back to Sign-in
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
                 <div class="col-lg-12 wow fadeIn" data-wow-delay="0.1s">
 
-                    <div id="signin">
+                    <div id="forgot">
                         <form id="formAuthentication" class="mb-3" method="POST" autocomplete="off">
                             <h1 class="display-6 mb-2 fw-bold justify-content-center text-center">
-                                Welcome Back 🥳
+                                Forgot your password? 🔒
                             </h1>
                             <p class="mb-5 justify-content-center text-center">
-                                Let's get you back into your account
+                                Enter your email and we'll send you instructions to reset your password
                             </p>
                             <div class="mb-3">
-                                <label for="username" class="form-label">Please, input your username or email
-                                    address</label>
-                                <input type="text" class="form-control" id="luname" name="luname"
-                                    placeholder="Enter your username" autofocus />
-                                <h6 style="font-size: 12px" class="text-danger mt-1" id="lumsg"></h6>
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="femail" name="femail"
+                                    placeholder="Enter your email" autofocus />
                             </div>
 
-                            <div class="mb-3 form-password-toggle">
-                                <div class="d-flex justify-content-between">
-                                    <label class="form-label" for="password">Type in your password</label>
-                                    <a style="text-decoration: none;" href="./forgot">
-                                        <small>Forgot Password?</small>
-                                    </a>
-                                </div>
-                                <div class="input-group input-group-merge">
-                                    <input type="password" id="lpword" class="form-control" name="lpword"
-                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                        aria-describedby="password" />
-                                </div>
-                                <h6 style="font-size: 12px" class="text-danger mt-1" id="lupmsg"></h6>
-                            </div>
-                            <!--<div class="mb-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="remember-me" />
-                                        <label class="form-check-label" for="remember-me"> Remember Me </label>
-                                    </div>
-                                </div>-->
-                            <div class="mt-4">
-                                <h6 style="font-size: 12px" class="text-danger text-center mt-1" id="lmsg">
-                                </h6>
-                                <button class="btn btn-primary d-grid w-100" type="button" id="lsub">Take me to my
-                                    dashboard</button>
-                            </div>
+                            <h6 style="font-size: 15px" class="text-danger  text-center mt-1" id="fmsg"></h6>
+                            <button type="button" id="fsub" class="btn btn-primary d-grid w-100">Send Reset
+                                Link</button>
 
-                            <p class="text-center mt-3">
-                                <span>Are you new here?</span>
-                                <a style="text-decoration: none;" href="./signup">
-                                    <span>Create an account</span>
+                            <div class="text-center">
+                                <a style="text-decoration: none" href="./signin"
+                                    class="d-flex align-items-center justify-content-center mt-2">
+                                    <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
+                                    Back to Sign-in
                                 </a>
-                            </p>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -192,12 +200,18 @@ input[type=number] {
     //open verify page by default
     function otpVerify() {
         document.getElementById('verify').style.display = 'block';
-        document.getElementById('imgg').style.display = 'none';
+    }
+
+    //open update pword page
+    function updatePword() {
+        document.getElementById('updatepword').style.display = 'block';
+        document.getElementById('verify').style.display = 'none';
+        document.getElementById('forgot').style.display = 'none';
     }
 
     //close signup page
     function signupClose() {
-        document.getElementById('signup').style.display = 'none';
+        document.getElementById('forgot').style.display = 'none';
     }
     </script>
 
@@ -207,6 +221,11 @@ input[type=number] {
     if(isset($_SESSION['usermail']) && !isset($_SESSION['login'])) {
 
         echo'<script>otpVerify(); signupClose();</script>';
+    }
+
+    if(isset($_SESSION['vnext']) && !isset($_SESSION['login'])) {
+
+        echo'<script>updatePword();</script>';
     }
     ?>
 </body>

@@ -124,7 +124,7 @@ if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) &
 
     $fname          = clean(escape($_POST['fname']));
     $usname         = clean(escape($_POST['usname']));
-    $caty          = clean(escape($_POST['catgy']));
+    $caty           = clean(escape($_POST['catgy']));
     $email          = clean(escape($_POST['email']));
     $pword          = clean(escape($_POST['pword']));
     $cpword         = clean(escape($_POST['cpword']));
@@ -184,7 +184,7 @@ function register($fname, $usname, $email, $pword, $ref, $catgy, $inst, $abt) {
     <p style="color: black; font-weight: bold; margin-top: 24px !important;">👋 Welcome to Unistudent Match. </p>
     </tr>
     <tr>
-    <p style="color: black; margin-top: 8px !important;">✨ You are one-click towards activating your account and becoming part of the Tribe</p>
+    <p style="color: black; margin-top: 8px !important;">✨ You are one-click towards activating your account and becoming part of the tribe</p>
     </tr>
     <tr>
     <p style="color: black; margin-top: 8px !important;">⬇️ Kindly use the code below to activate your account for FREE!</p>
@@ -486,6 +486,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
 
         $sql = "SELECT * FROM `users` WHERE `usname` = '$username' OR `email` = '$username' AND `password` = '$password'";
         $result = query($sql);
+        
         if(row_count($result) == 1) {
 
             $row        = mysqli_fetch_array($result);
@@ -512,17 +513,16 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
                 $msg = <<<DELIMITER
 
                             <tr>
-                            <p style="color: black; font-weight: bold; margin-top: 24px !important;">👋 Welcome to Books In Vogue. </p>
+                            <p style="color: black; font-weight: bold; margin-top: 24px !important;">👋 Welcome to Unistudent Match. </p>
                             </tr>
                             <tr>
-                            <p style="color: black; margin-top: 8px !important;">✨ You are one-click towards activating your account and becoming part of the Books In
-                            Vogue Tribe</p>
+                            <p style="color: black; margin-top: 8px !important;">✨ You are one-click towards activating your account and becoming part of the tribe</p>
                             </tr>
                             <tr>
                             <p style="color: black; margin-top: 8px !important;">⬇️ Kindly use the code below to activate your account for FREE!</p>
                             </tr>
                             <tr>
-                            <p style="color: black; margin-top: 8px !important;">🔒 Do not share this code outside Books In Vogue website or Mobile App</p>
+                            <p style="color: black; margin-top: 8px !important;">🔒 Do not share this code outside our website or Mobile App</p>
                             </tr>
                             
                             <tr>
@@ -547,7 +547,9 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
                 
             }  else {
 
-                role_director($username, $role);
+                echo 'Loading... Please Wait!';
+                $_SESSION['login'] = $user;
+                echo '<script>window.location.href ="dashboard/./"</script>';
         } 
 
     }  else {
@@ -586,7 +588,7 @@ if(isset($_POST['fgeml'])) {
             <p style="color: black; margin-top: 8px !important;">⬇️ Kindly use the code below to continue into your account</p>
             </tr>
             <tr>
-            <p style="color: black; margin-top: 8px !important;">🔒  Do not share this code outside Books In Vogue website or Mobile App</p>
+            <p style="color: black; margin-top: 8px !important;">🔒  Do not share this code outside our website or Mobile App</p>
             </tr>
            
             
@@ -662,9 +664,6 @@ if(isset($_POST['fgpword']) && isset($_POST['fgcpword'])) {
                     <p style="color: black; margin-top: 8px !important;">Got any issues, complaint or request? Kindly chat with us on our <a target="_blank" href="https://unistudentmatch.com/contact">live chat support panel</a></p>
                     </tr>
                     <tr>
-                    <p style="color: black; margin-top: 8px !important;">Do have a wonderful book experience</a></p>
-                    </tr>
-                    <tr>
                     <p style="color: black; margin-bottom: 32px !important;">⚡ Best Regards</p>
                     </tr>
     
@@ -674,7 +673,9 @@ if(isset($_POST['fgpword']) && isset($_POST['fgcpword'])) {
         notify_user($username, $email, $msg, $subj);
 
         //redirect to user dashboard according to user category
-        role_director($username, $role);
+        echo 'Loading... Please Wait!';
+        $_SESSION['login'] = $username;
+        echo '<script>window.location.href ="dashboard/./"</script>';
         
     }
 }

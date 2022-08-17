@@ -177,7 +177,7 @@ input[type=number] {
                             <div style="display: none" class="mb-3" id="anref">
                                 <label for="email" class="form-label">Others? Please specify</label>
                                 <input type="text" class="form-control" id="nref" name="nref"
-                                    placeholder="Who told you about Books in Vogue" />
+                                    placeholder="Who told you about Unistudent Match" />
                                 <h6 style="font-size: 12px" class="text-danger mt-1" id="nref"></h6>
                             </div>
                             <!--<div class="mb-3">
