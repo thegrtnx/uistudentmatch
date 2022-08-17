@@ -1,4 +1,7 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php [NC,L]
+RewriteRule ^(.*)$ $1.php [NC,L] 
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^.*$ https://unistudentsmatch.com [R,L]
