@@ -17,10 +17,10 @@ include("component/head.php");
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-6 col-sm-1">
-                                    <h1 class="display-3 text-light fw-bold mb-4 animated slideInDown">
-                                        Believe In Your Happy Ever After ...
+                                    <h1 style="color: lightgrey" class="display-3 fw-bold mb-4 animated slideInDown">
+                                        Believe In Your Happily Ever After ...
                                     </h1>
-                                    <p class="fs-5 text-light mb-5">
+                                    <p style="color: lightgrey" class="fs-5 mb-5">
                                         Search Practising Single Muslims Now!
                                     </p>
                                     <a href="./signup" class="btn btn-primary py-3 px-5">Create a free account</a>
@@ -35,10 +35,10 @@ include("component/head.php");
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-6 col-sm-1">
-                                    <h1 class="display-3 text-light fw-bold mb-4 animated slideInDown">
-                                        Find your perfect university partner
+                                    <h1 class="display-3 text-dark fw-bold mb-4 animated slideInDown">
+                                        Find Your Perfect University Partner
                                     </h1>
-                                    <p class="fs-5 text-white mb-5">
+                                    <p class="fs-5 text-black mb-5">
                                         Register For FREE! <br /> No Credit Card
                                         Required!
                                     </p>
