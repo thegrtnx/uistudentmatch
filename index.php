@@ -271,6 +271,84 @@ include("component/head.php");
     </div>-->
     <!-- Testimonial End -->
 
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5" id="pricing">
+        <div class="container">
+            <div class="text-center mx-auto" style="max-width: 500px">
+                <h1 class="display-3 mb-5">
+                    One place to find the one for you.
+
+                </h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded h-100 p-5">
+                        <div class="d-flex align-items-center ms-n5 mb-4">
+
+                            <h4 class="display-6 fw-bold mb-0">£14.99/<small>month</small></h4>
+                        </div>
+                        <p class="mb-4">
+                            ✔ Access to our entire database
+                        </p>
+                        <p class="mb-4">
+                            ✔ See who likes your profile
+                        </p>
+                        <p class="mb-4">
+                            ✔ Advanced search filters
+                        </p>
+                        <p class="mb-4">
+                            ✔ Complete privacy
+                        </p>
+                        <p class="mb-4">
+                            ✔ Take back requests
+                        </p>
+                        <p class="mb-4">
+                            ✔ Unlimited Request Per Month
+                        </p>
+
+                        <a class="btn btn-primary text-white col-12 btn-rounded px-5" target="_blank"
+                            href="https://unistudentsmatch.com/dashboard">Subscribe</a>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded h-100 p-5">
+                        <div class="d-flex align-items-center ms-n5 mb-4">
+
+                            <h4 class="display-6 fw-bold mb-0">£120/<small>year</small></h4>
+                        </div>
+                        <p class="mb-4">
+                            ✔ Access to our entire database
+                        </p>
+                        <p class="mb-4">
+                            ✔ See who likes your profile
+                        </p>
+                        <p class="mb-4">
+                            ✔ Advanced search filters
+                        </p>
+                        <p class="mb-4">
+                            ✔ Complete privacy
+                        </p>
+                        <p class="mb-4">
+                            ✔ Take back requests
+                        </p>
+                        <p class="mb-4">
+                            ✔ Unlimited Request Per Year
+                        </p>
+
+                        <a class="btn btn-primary text-white col-12 btn-rounded px-5" target="_blank"
+                            href="https://unistudentsmatch.com/dashboard">Subscribe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
     <?php include("component/footer.php") ?>
 
     <!-- Back to Top -->

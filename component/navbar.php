@@ -34,6 +34,7 @@
         <a href="./" class="nav-item nav-link me-5">Home</a>
         <a href="#about" class="nav-item nav-link me-3">About Us</a>
         <a href="#features" class="nav-item nav-link me-3">Why choose us?</a>
+        <a href="#pricing" class="nav-item nav-link me-3">Pricing</a>
         <a href="./contact" class="nav-item nav-link me-3">Contact Us</a>
 
     </div>
