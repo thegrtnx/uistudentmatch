@@ -83,12 +83,32 @@
                                             </a>
                                         </li>
 
-                                        <li class="nav-item justify-content-center text-center">
+                                        <?php
+
+                                        if($t_users['wallet'] == 0 || $t_users['wallet'] == null || $t_users['wallet'] == '') {
+                                        ?>
+
+                                        <li class="nav-item justify-content-center text-center mb-2 mt-2">
+                                            <a href=".././#pricing" class="btn btn-primary text-white">Subscribe to send
+                                                a
+                                                message
+                                            </a>
+                                        </li>
+
+                                        <?php
+                                        } else {
+                                        ?>
+
+                                        <li class="nav-item justify-content-center text-center mb-2 mt-2">
                                             <a href="./message?user=<?php echo $row['usname'] ?>"
                                                 class="btn btn-primary text-white">Send a
                                                 message
                                             </a>
                                         </li>
+
+                                        <?php
+                                        }
+                                        ?>
                                     </ul>
                                 </div>
                             </div>

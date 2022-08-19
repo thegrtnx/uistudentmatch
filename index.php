@@ -349,6 +349,105 @@ include("component/head.php");
     </div>
     <!-- Service End -->
 
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5" id="pricing">
+        <div class="container">
+            <div class="text-center mx-auto" style="max-width: 500px">
+                <h1 class="display-3 mb-5">
+                    Frequently Asked Questions
+
+                </h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="">
+                        <div class="m-4">
+                            <div class="accordion" id="myAccordion">
+                                <div class="accordion-item  bg-light">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button type="button" class="accordion-button collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseOne">What are the
+                                            requirements for signing up?</button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse"
+                                        data-bs-parent="#myAccordion">
+                                        <div class="card-body">
+                                            <p>Any Muslim University student can sign up.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTwo">How do I match with users on the
+                                            app?</button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse show"
+                                        data-bs-parent="#myAccordion">
+                                        <div class="card-body">
+                                            <p>Candidates look through our growing database, to find a match who they
+                                                believe suits them best. They decide who they want to request details
+                                                from.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button type="button" class="accordion-button collapsed  display-2"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree">Can I match
+                                            with
+                                            someone from another country?</button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        data-bs-parent="#myAccordion">
+                                        <div class="card-body">
+                                            <p>Absolutely! We've had multiple successful matches and marriages from
+                                                brothers and sisters that are from opposite sides of the globe. We've
+                                                even had profiles get matched and married on Zoom!
+
+                                                There's no obstacle to true love inshaaAllah.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingfour">
+                                        <button type="button" class="accordion-button collapsed  display-2"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"><b>Is Unistudents
+                                                Match available in my country?</b></button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        data-bs-parent="#myAccordion">
+                                        <div class="card-body">
+                                            <p>Yes, we are officially international. This means you can join Unistudents
+                                                Match from anywhere in the world.
+
+                                                The majority of our profiles are from the UK, USA, Canada and European
+                                                country, but we still have a growing list of profiles from over 33
+                                                locations around the world that you can join.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+
+
+
+
     <?php include("component/footer.php") ?>
 
     <!-- Back to Top -->

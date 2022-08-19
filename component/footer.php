@@ -34,8 +34,14 @@
     <div class="container-fluid copyright">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
                     &copy; Unistudent Match <?php echo date("Y") ?>
+                </div>
+
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0"><a href="./t&c">Terms And Conditions</a>
+                </div>
+
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0"><a href="./privacy">Privacy Policy</a>
                 </div>
 
             </div>

@@ -1,6 +1,6 @@
 <?php include("component/top.php"); 
 
-if(!isset($_GET['user'])) {
+if(!isset($_GET['user']) || $t_users['wallet'] == 0 || $t_users['wallet'] == null || $t_users['wallet'] == '') {
 
     redirect("./");
     
