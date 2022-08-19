@@ -67,7 +67,7 @@ include("component/head.php");
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
                         <h1 class="display-6 mb-3">
-                            We're Here To Help You
+                            The FIRST Ever Matchmaking Service For Muslims University Students
                         </h1>
                         <p class="mb-4">
                             We know how difficult it is meeting someone special to share life's
@@ -368,46 +368,50 @@ include("component/head.php");
                                 <div class="accordion-item  bg-light">
                                     <h2 class="accordion-header" id="headingOne">
                                         <button type="button" class="accordion-button collapsed"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseOne">What are the
-                                            requirements for signing up?</button>
+                                            data-bs-toggle="collapse" data-bs-target="#collapseOne">I have a question or
+                                            enquiry, do I contact unistudents match?</button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse"
                                         data-bs-parent="#myAccordion">
                                         <div class="card-body">
-                                            <p>Any Muslim University student can sign up.</a></p>
+                                            <p>We can be emailed at unistudentsmatch@outlook.com - but we kindly ask
+                                                that
+                                                you read through our FAQs first, as the vast majority of questions you
+                                                will have
+                                                can be answered here.</a></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingTwo">
                                         <button type="button" class="accordion-button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseTwo">How do I match with users on the
-                                            app?</button>
+                                            data-bs-target="#collapseTwo">How Islamic is the unistudents match
+                                            process?</button>
                                     </h2>
                                     <div id="collapseTwo" class="accordion-collapse collapse show"
                                         data-bs-parent="#myAccordion">
                                         <div class="card-body">
-                                            <p>Candidates look through our growing database, to find a match who they
-                                                believe suits them best. They decide who they want to request details
-                                                from.</a></p>
+                                            <p>We follow the Quran and Sunnah. We take pride in making sure our
+                                                matchmaking service is an Islamic as possible. This includes not being
+                                                able to
+                                                send photos to each other and algorithms are in place to monitor
+                                                messages
+                                                that are inappropriate.</a></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingThree">
                                         <button type="button" class="accordion-button collapsed  display-2"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseThree">Can I match
-                                            with
-                                            someone from another country?</button>
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree">How much does
+                                            unistudents match cost?</button>
                                     </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse"
                                         data-bs-parent="#myAccordion">
                                         <div class="card-body">
-                                            <p>Absolutely! We've had multiple successful matches and marriages from
-                                                brothers and sisters that are from opposite sides of the globe. We've
-                                                even had profiles get matched and married on Zoom!
-
-                                                There's no obstacle to true love inshaaAllah.</a></p>
+                                            <p>We charge a fee of £14.99 per month. There is also an annual subscription
+                                                for
+                                                £120.</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -415,21 +419,89 @@ include("component/head.php");
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingfour">
                                         <button type="button" class="accordion-button collapsed  display-2"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"><b>Is Unistudents
-                                                Match available in my country?</b></button>
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"><b>For a sister
+                                                signing up to unistudents match, what is the involvement of the
+                                                Wali?</b></button>
                                     </h2>
                                     <div id="collapseFour" class="accordion-collapse collapse"
                                         data-bs-parent="#myAccordion">
                                         <div class="card-body">
-                                            <p>Yes, we are officially international. This means you can join Unistudents
-                                                Match from anywhere in the world.
-
-                                                The majority of our profiles are from the UK, USA, Canada and European
-                                                country, but we still have a growing list of profiles from over 33
-                                                locations around the world that you can join.</a></p>
+                                            <p>When signing up to unistudents match, all sisters will need to include
+                                                their
+                                                contact details of their guardian.</a></p>
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingfive">
+                                        <button type="button" class="accordion-button collapsed  display-2"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFive"><b>How do you match
+                                                people?</b></button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse"
+                                        data-bs-parent="#myAccordion">
+                                        <div class="card-body">
+                                            <p>Once you have signed up to the subscription, you will be given access to
+                                                the
+                                                database where you can connect with other brothers and sisters. You can
+                                                view
+                                                their profiles and directly message them.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingsix">
+                                        <button type="button" class="accordion-button collapsed  display-2"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseSix"><b>How many profiles
+                                                am I allowed to contact on unistudents match?</b></button>
+                                    </h2>
+                                    <div id="collapseSix" class="accordion-collapse collapse"
+                                        data-bs-parent="#myAccordion">
+                                        <div class="card-body">
+                                            <p>Unlimited! That’s right. You can contact as many as you like. Unlike some
+                                                other
+                                                matchmaking services where they limit you to 3 requests a month. You
+                                                will be
+                                                given unlimited for the same price.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingseven">
+                                        <button type="button" class="accordion-button collapsed  display-2"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseSeven"><b>Who can sign
+                                                up??</b></button>
+                                    </h2>
+                                    <div id="collapseSeven" class="accordion-collapse collapse"
+                                        data-bs-parent="#myAccordion">
+                                        <div class="card-body">
+                                            <p>All university students who are currently at university and all students
+                                                who
+                                                have already graduated.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingeight">
+                                        <button type="button" class="accordion-button collapsed  display-2"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseEight"><b>I am from
+                                                outside of UK, can I still sign up?</b></button>
+                                    </h2>
+                                    <div id="collapseEight" class="accordion-collapse collapse"
+                                        data-bs-parent="#myAccordion">
+                                        <div class="card-body">
+                                            <p>Yes! As long as you're a student or a graduate, you can sign up from
+                                                anywhere
+                                                in the world.</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
 
