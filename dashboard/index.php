@@ -58,7 +58,7 @@
                             <!-- Widget: user widget style 2 -->
                             <div class="card card-widget widget-user-2">
                                 <!-- Add the bg color to the header using any of the bg-* classes -->
-                                <div class="widget-user-header bg-warning">
+                                <div class="widget-user-header bg-primary">
                                     <div class="widget-user-image">
                                         <img class="img-circle elevation-2" src="<?php echo $pix ?>"
                                             alt="<?php echo ucwords($row['fullname']) ?>">
@@ -71,15 +71,13 @@
                                 <div class="card-footer p-0">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link">
-                                                University <span
-                                                    class="float-right"><?php echo ucwords($row['inst']) ?></span>
+                                            <a class="nav-link text-dark">
+                                                <span class="float-left"><?php echo ucwords($row['inst']) ?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link">
-                                                About: <span
-                                                    class="float-right"><?php echo ucwords($row['bio']) ?></span>
+                                            <a class="nav-link text-dark">
+                                                <span class="float-left"><?php echo ucwords($row['bio']) ?></span>
                                             </a>
                                         </li>
 
