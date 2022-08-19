@@ -688,7 +688,7 @@ function user_details() {
 
     if(!isset($_SESSION['login'])) {
 
-        redirect("./logout");
+        redirect(".././logout");
 
     } else {
 
