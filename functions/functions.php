@@ -728,7 +728,7 @@ if(isset($_POST['msgbtn'])) {
 
     $error_message = "You are not allowed to use foul and sexual languages. <br> Once you keep trying this, you will be banned from Unistudent Match";
 
-    if (str_contains($a, 'sex') || str_contains($a, 'nude') || str_contains($a, 'pussy') || str_contains($a, 'romance') || str_contains($a, 'condom') || str_contains($a, 'naked') || str_contains($a, 'intercourse') || str_contains($a, 'loving making') || str_contains($a, 'lovingmaking') || str_contains($a, 'masturbation') || str_contains($a, 'nipple') || str_contains($a, 'dick') || str_contains($a, 'fuck') || str_contains($a, 'kiss') || str_contains($a, 'hardcore') || str_contains($a, 'romantic')) { 
+    if (str_contains($a, 'sex') || str_contains($a, 'nude') || str_contains($a, 'pussy') || str_contains($a, 'romance') || str_contains($a, 'condom') || str_contains($a, 'naked') || str_contains($a, 'intercourse') || str_contains($a, 'loving making') || str_contains($a, 'lovingmaking') || str_contains($a, 'masturbation') || str_contains($a, 'nipple') || str_contains($a, 'dick') || str_contains($a, 'fuck') || str_contains($a, 'kiss') || str_contains($a, 'hardcore') || str_contains($a, 'romantic') || str_contains($a, 'sexy') || str_contains($a, 'babe') || str_contains($a, 'darling') || str_contains($a, 'wife') || str_contains($a, 'husband') || str_contains($a, 'husby') || str_contains($a, 'wifey')) { 
         echo validator($error_message);
     } else {
 
@@ -737,11 +737,11 @@ if(isset($_POST['msgbtn'])) {
     $d = $t_users['usname'];
 
    $sql = "INSERT INTO chat(`name`, `message`, `recipient`, `created_on`)";
-   //$sql.="VALUES('$d', '$a', '$c', '$b')";
+   $sql.="VALUES('$d', '$a', '$c', '$b')";
 
-   //$res = query($sql);
+   $res = query($sql);
 
-   //redirect("./message?user=$c");
+   redirect("./message?user=$c");
     }
 }
 

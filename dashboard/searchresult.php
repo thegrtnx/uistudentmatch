@@ -44,6 +44,7 @@ if(!isset($_GET['nationality']) && !isset($_GET['agefrom']) && !isset($_GET['age
                                                     <select name="nationality" id="nationality" class="form-control">
                                                         <option value="<?php echo ucfirst($nationality) ?>">
                                                             <?php  echo ucfirst($nationality) ?></option>
+                                                        <option value="None">None</option>
                                                         <option value="afghan">Afghan</option>
                                                         <option value="albanian">Albanian</option>
                                                         <option value="algerian">Algerian</option>
@@ -647,7 +648,7 @@ if(!isset($_GET['nationality']) && !isset($_GET['agefrom']) && !isset($_GET['age
                     }
 
 
-                    $sql = "SELECT * FROM `users` WHERE `nationality` = '$nationality' OR `country` = '$country' AND `usname` <> '$data' AND `age` BETWEEN '$agefrom' AND '$ageto' ORDER BY RAND() desc";
+                    $sql = "SELECT * FROM `users` WHERE `country` = '$country' OR `nationality` = '$nationality' AND `usname` <> '$data' AND `age` BETWEEN '$agefrom' AND '$ageto' ORDER BY RAND() desc";
                     $res = query($sql);
                     if(row_count($res) == null || row_count($res) == '') {
 

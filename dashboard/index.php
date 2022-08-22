@@ -39,6 +39,7 @@
                                                         .:</b></label>
                                                 <div class="form-group">
                                                     <select name="nationality" id="nationality" class="form-control">
+                                                        <option value="None">None</option>
                                                         <option value="afghan">Afghan</option>
                                                         <option value="albanian">Albanian</option>
                                                         <option value="algerian">Algerian</option>
