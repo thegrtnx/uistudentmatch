@@ -748,7 +748,7 @@ if(isset($_POST['msgbtn'])) {
 
 
 //validate edit profile
-if(isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['abt']) && isset($_POST['inst']) && isset($_POST['age']) && isset($_POST['country']) && isset($_POST['nationality']) && isset($_POST['idd'])) {
+if(isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['abt']) && isset($_POST['inst']) && isset($_POST['age']) && isset($_POST['country']) && isset($_POST['nationality']) && isset($_POST['idd']) && isset($_POST['prayer']) && isset($_POST['marital']) && isset($_POST['children']) && isset($_POST['hijab']) && isset($_POST['heigh']) && isset($_POST['pro']) && isset($_POST['idd']) && isset($_POST['beard'])) {
 
       
     $fname          = clean(escape($_POST['fname']));
@@ -760,7 +760,16 @@ if(isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['abt']) && i
     $nationality    = clean(escape($_POST['nationality']));
     $idd            = clean(escape($_POST['idd']));
 
-    $sql = "UPDATE users SET `fullname` = '$fname', `email` = '$email', `bio` = '$abt', `inst` = '$inst', `age` = '$age', `country` = '$country', `nationality` = '$nationality' WHERE `sn` = '$idd'";
+    $pray           = clean(escape($_POST['prayer']));
+    $mari           = clean(escape($_POST['marital']));
+    $child          = clean(escape($_POST['children']));
+    $hija           = clean(escape($_POST['hijab']));
+    $heigh          = clean(escape($_POST['heigh']));
+    $pro            = clean(escape($_POST['pro']));
+    $qua            = clean(escape($_POST['qua']));
+    $beard          = clean(escape($_POST['beard']));
+
+    $sql = "UPDATE users SET `fullname` = '$fname', `email` = '$email', `bio` = '$abt', `inst` = '$inst', `age` = '$age', `country` = '$country', `nationality` = '$nationality', `prayer` = '$pray', `marital` = '$mari', `children` = '$child', `hijab` = '$hija', `height` = '$heigh', `prof` = '$pro', `qual` = '$qua', `beard` = '$beard' WHERE `sn` = '$idd'";
     $result = query($sql);
 
     //open otp page

@@ -146,7 +146,45 @@ $(document).ready(function () {
     var age = $("#age").val();
     var country = $("#country").val();
     var nationality = $("#nationality").val();
+    var prayer = $("#prayer").val();
+    var marital = $("#marital").val();
+    var children = $("#children").val();
+    var hijab = $("#hijab").val();
+    var height = $("#height").val();
+    var beard = $("#beard").val();
+    var prof = $("#prof").val();
+    var qual = $("#qual").val();
     var idd = $("#idd").val();
+    
+
+    if (height == "" || height == null) {
+
+      var heigh = 'Prefer not to say';
+
+    } else {
+
+      var heigh = $("#height").val();
+
+    }
+
+      if (prof == "" || prof == null) {
+
+        var pro = 'Prefer not to say';
+
+      } else {
+
+        var pro = $("#prof").val();
+
+      }
+
+        if (qual == "" || qual == null) {
+
+          var qua = 'Prefer not to say';
+
+        } else {
+
+          var qua = $("#qual").val();
+        }
 
     if (fname == "" || fname == null) {
       $("#fmsg").html("Kindly input your full name.");
@@ -176,7 +214,16 @@ $(document).ready(function () {
                         age: age,
                         country: country,
                         nationality: nationality,
-                        idd: idd
+                        idd: idd,
+                        prayer: prayer, 
+                        marital: marital, 
+                        children: children, 
+                        hijab: hijab, 
+                        heigh: heigh, 
+                        pro: pro, 
+                        qua: qua, 
+                        idd: idd, 
+                        beard: beard
                       },
                       success: function (data) {
                         $("#msg").html(data);

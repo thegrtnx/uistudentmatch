@@ -594,6 +594,104 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="form-group row">
+                                                    <label for="inputName" class="col-sm-2 col-form-label">Prayer
+                                                        Sect</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="prayer" id="prayer" class="form-control">
+                                                            <option><?php echo $t_users['prayer'] ?></option>
+                                                            <option>Prefer not to say</option>
+                                                            <option>Sunni</option>
+                                                            <option>Shia</option>
+                                                            <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputEmail" class="col-sm-2 col-form-label">Marital
+                                                        Status</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="marital" id="marital" class="form-control">
+                                                            <option><?php echo $t_users['marital'] ?></option>
+                                                            <option>Prefer not to say</option>
+                                                            <option>Single</option>
+                                                            <option>Married</option>
+                                                            <option>Divorced</option>
+                                                            <option>Windowed</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label for="inputExperience"
+                                                        class="col-sm-2 col-form-label">Children</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="children" id="children" class="form-control">
+                                                            <option><?php echo $t_users['children'] ?></option>
+                                                            <option>Prefer not to say</option>
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputSkills" class="col-sm-2 col-form-label">Observes
+                                                        Hijab</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="hijab" id="hijab" class="form-control">
+                                                            <option><?php echo $t_users['hijab'] ?></option>
+                                                            <option>Prefer not to say</option>
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Height</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="height"
+                                                            placeholder="Leave empty to prefer not to say"
+                                                            value="<?php echo $t_users['height'] ?>">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Beard</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="beard" id="beard" class="form-control">
+                                                            <option><?php echo $t_users['beard'] ?></option>
+                                                            <option>Prefer not to say</option>
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Profession</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control"
+                                                            value="<?php echo $t_users['prof'] ?>" id="prof"
+                                                            placeholder="Leave empty to prefer not to say">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Qualification</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" value="<?php echo $t_users['qual'] ?>"
+                                                            class="form-control" id="qual"
+                                                            placeholder="Leave empty to prefer not to say">
+                                                    </div>
+                                                </div>
+
+
                                                 <input type="text" value="<?php echo $t_users['sn'] ?>" id="idd" hidden>
 
                                                 <p id="msg"></p>
