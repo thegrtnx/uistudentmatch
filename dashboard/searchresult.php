@@ -1,4 +1,18 @@
-<?php include("component/top.php"); ?>
+<?php include("component/top.php");
+
+if(!isset($_GET['nationality']) && !isset($_GET['agefrom']) && !isset($_GET['ageto']) && !isset($_GET['country'])) {
+
+    redirect("./");
+
+} else {
+
+    $nationality = escape(clean($_GET['nationality']));
+    $agefrom = escape(clean($_GET['agefrom']));
+    $ageto = escape(clean($_GET['ageto']));
+    $country = escape(clean($_GET['country']));
+
+}
+?>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -8,29 +22,18 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Welcome - <?php echo ucfirst($t_users['usname']) ?></h1>
-                        </div>
-
-                    </div>
-                </div><!-- /.container-fluid -->
-            </section>
 
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
 
-                    <div style="display: none" id="srcclck" class="block-quick-info-2">
+                    <div class="block-quick-info-2">
                         <div class="container">
                             <div class="block-quick-info-2-inner">
                                 <div class="row">
 
-                                    <form class="form-contact contact_form col-lg-12" method="GET"
-                                        action="./searchresult" id="contactForm" novalidate="novalidate">
+                                    <form class="form-contact contact_form col-lg-12 mt-5 mb-3" method="post"
+                                        id="contactForm" novalidate="novalidate">
                                         <div class="row">
 
                                             <div class="col-md-3 col-sm-3">
@@ -39,6 +42,8 @@
                                                         .:</b></label>
                                                 <div class="form-group">
                                                     <select name="nationality" id="nationality" class="form-control">
+                                                        <option value="<?php echo ucfirst($nationality) ?>">
+                                                            <?php  echo ucfirst($nationality) ?></option>
                                                         <option value="afghan">Afghan</option>
                                                         <option value="albanian">Albanian</option>
                                                         <option value="algerian">Algerian</option>
@@ -244,7 +249,9 @@
                                                         .:</b></label>
                                                 <div class="form-group">
                                                     <select name="agefrom" id="agefrom" class="form-control" required>
-
+                                                        <option style="font-size: 20px" id="agefrom">
+                                                            <?php echo $agefrom ?>
+                                                        </option>
                                                         <?php
                                                             $x = 18;
 
@@ -270,7 +277,8 @@
                                                         .:</b></label>
                                                 <div class="form-group">
                                                     <select name="ageto" id="ageto" class="form-control" required>
-
+                                                        <option style="font-size: 20px" id="ageto"><?php echo $ageto ?>
+                                                        </option>
                                                         <?php
                                                             $x = 18;
 
@@ -297,6 +305,8 @@
                                                         .:</b></label>
                                                 <div class="form-group">
                                                     <select id="country" name="country" class="form-control">
+                                                        <option value="<?php echo ucfirst($country) ?>">
+                                                            <?php  echo ucfirst($country) ?></option>
                                                         <option value="Afghanistan">Afghanistan</option>
                                                         <option value="Åland Islands">Åland Islands</option>
                                                         <option value="Albania">Albania</option>
@@ -616,11 +626,6 @@
                     </div>
 
 
-
-
-                    <h5 style="cursor: pointer" class="mt-4 mb-4 bg-danger py-2" id="src"> &nbsp;&nbsp;&nbsp;Click here
-                        to Search</h5>
-
                     <div class="row">
 
                         <?php
@@ -642,9 +647,14 @@
                     }
 
 
-                    $sql = "SELECT * FROM `users` WHERE `role` = '$role' AND `usname` <> '$data' ORDER BY RAND() desc";
+                    $sql = "SELECT * FROM `users` WHERE `nationality` = '$nationality' OR `country` = '$country' AND `usname` <> '$data' AND `age` BETWEEN '$agefrom' AND '$ageto' ORDER BY RAND() desc";
                     $res = query($sql);
+                    if(row_count($res) == null || row_count($res) == '') {
+
+                        echo "<p class='mx-2 text-danger fw-bold'>We don't have any record that match your filter <br><a href='./'>Click here to view all profiles</a></p>";
+                    } else {
                     while($row = mysqli_fetch_array($res)) {
+                        
                     ?>
                         <div class="col-md-4">
                             <!-- Widget: user widget style 2 -->
@@ -698,6 +708,7 @@
 
                                         <?php
                                         }
+                                    }
                                         ?>
                                     </ul>
                                 </div>

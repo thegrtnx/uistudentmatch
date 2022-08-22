@@ -24,6 +24,13 @@ $(document).ready(function () {
   });
 
 
+   //searcg
+   $("#src").click(function () {
+      $("#srcclck").show();
+      $("#src").hide();
+  });
+
+
 
   //signup
   $("#sub").click(function () {

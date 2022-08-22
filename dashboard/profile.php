@@ -388,7 +388,7 @@
 
                                                 <div class="form-group row">
                                                     <label for="inputSkills"
-                                                        class="col-sm-2 col-form-label">Nationality</label>
+                                                        class="col-sm-2 col-form-label">Ethnicity</label>
                                                     <div class="col-sm-10">
                                                         <select name="nationality" id="nationality"
                                                             class="form-control">
