@@ -1,8 +1,8 @@
 <?php
 //creating the database to use
-$con = mysqli_connect("localhost","root","","unistud");
+//$con = mysqli_connect("localhost","root","","unistud");
 //HWq3UAf2nCbRA3uIAmTheLord2022
-//$con = mysqli_connect("localhost","paradi12_unistud","securemelikekilode","paradi12_unistud");
+$con = mysqli_connect("localhost","paradi12_unistud","securemelikekilode","paradi12_unistud");
 
 function row_count($result) {
 

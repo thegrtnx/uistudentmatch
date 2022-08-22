@@ -129,6 +129,59 @@ $(document).ready(function () {
     }
   });
 
+
+  //edit profile
+   $("#eddbtn").click(function () {
+    var fname = $("#fname").val();
+    var email = $("#email").val();
+    var inst = $("#inst").val();
+    var abt = $("#abt").val();
+    var age = $("#age").val();
+    var country = $("#country").val();
+    var nationality = $("#nationality").val();
+    var idd = $("#idd").val();
+
+    if (fname == "" || fname == null) {
+      $("#fmsg").html("Kindly input your full name.");
+    } else {
+        if (email == "" || email == null) {
+          $("#emmsg").html("Invalid email address");
+        } else {
+          if (abt == "" || abt == null) {
+            $("#abtmsg").html("Please tells us about yourself");
+          } else {
+            if (inst == "" || inst == null) {
+              $("#instmsg").html("Kindly input your institution name");
+            } else {
+                  if(age == null || age == '' || age == 0) {
+                    $("#agemsg").html("Kindly input your age");
+                  } else {
+                    $("#msg").html("Loading... Please wait");
+
+                    $.ajax({
+                      type: "post",
+                      url: "../functions/init.php",
+                      data: {
+                        fname: fname,
+                        email: email,
+                        abt: abt,
+                        inst: inst,
+                        age: age,
+                        country: country,
+                        nationality: nationality,
+                        idd: idd
+                      },
+                      success: function (data) {
+                        $("#msg").html(data);
+                      },
+                    });
+                  }
+                }
+              }
+            }
+          }
+  });
+
   //resend otp
   $("#rotp").click(function () {
     $("#otptitle").html("We've sent you another OTP ✅");

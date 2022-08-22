@@ -744,3 +744,28 @@ if(isset($_POST['msgbtn'])) {
    //redirect("./message?user=$c");
     }
 }
+
+
+
+//validate edit profile
+if(isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['abt']) && isset($_POST['inst']) && isset($_POST['age']) && isset($_POST['country']) && isset($_POST['nationality']) && isset($_POST['idd'])) {
+
+      
+    $fname          = clean(escape($_POST['fname']));
+    $email          = clean(escape($_POST['email']));
+    $inst           = clean(escape($_POST['inst']));
+    $abt            = clean(escape($_POST['abt']));
+    $age            = clean(escape($_POST['age']));
+    $country        = clean(escape($_POST['country']));
+    $nationality    = clean(escape($_POST['nationality']));
+    $idd            = clean(escape($_POST['idd']));
+
+    $sql = "UPDATE users SET `fullname` = '$fname', `email` = '$email', `bio` = '$abt', `inst` = '$inst', `age` = '$age', `country` = '$country', `nationality` = '$nationality' WHERE `sn` = '$idd'";
+    $result = query($sql);
+
+    //open otp page
+    echo 'Loading... Please Wait!';
+    echo '<script>alert("Profile Updated Successfully");</script>';
+    echo '<script>window.location.href ="./profile"</script>';
+
+}
