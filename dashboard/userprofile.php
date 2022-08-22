@@ -102,6 +102,33 @@ if(!isset($_GET['user'])) {
                                     <p class="text-dark">
                                         <?php echo ucwords($row['bio']) ?>
                                     </p>
+                                    <ul class="list-group list-group-unbordered mb-3">
+                                        <li class="list-group-item">
+                                            <b>Prayer Sect</b> <a class="ml-5"><?php echo $row['prayer'] ?></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Marital Status</b> <a
+                                                class="ml-5"><?php echo ucwords($row['marital']) ?></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Children</b> <a class="ml-5"><?php echo ucwords($row['children']) ?></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Hijab</b> <a class="ml-5"><?php echo ucwords($row['hijab']) ?></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Height</b> <a class="ml-5"><?php echo $row['height'] ?></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Beard</b> <a class="ml-5"><?php echo ucwords($row['beard']) ?></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Profession</b> <a class="ml-5"><?php echo ucwords($row['prof']) ?></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Qualification</b> <a class="ml-5"><?php echo ucwords($row['qual']) ?></a>
+                                        </li>
+                                    </ul>
 
 
                                 </div>

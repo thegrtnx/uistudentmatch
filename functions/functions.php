@@ -772,9 +772,9 @@ if(isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['abt']) && i
 
 
 //more details profile
-if(isset($_POST['prayer']) && isset($_POST['marital']) && isset($_POST['children']) && isset($_POST['hijab']) && isset($_POST['heigh']) && isset($_POST['pro']) && isset($_POST['qua']) && isset($_POST['idd'])) {
+if(isset($_POST['prayer']) && isset($_POST['marital']) && isset($_POST['children']) && isset($_POST['hijab']) && isset($_POST['heigh']) && isset($_POST['pro']) && isset($_POST['idd']) && isset($_POST['beard'])) {
 
-      
+     
     $fname          = clean(escape($_POST['prayer']));
     $email          = clean(escape($_POST['marital']));
     $inst           = clean(escape($_POST['children']));
@@ -783,8 +783,9 @@ if(isset($_POST['prayer']) && isset($_POST['marital']) && isset($_POST['children
     $country        = clean(escape($_POST['pro']));
     $nationality    = clean(escape($_POST['qua']));
     $idd            = clean(escape($_POST['idd']));
+    $beard          = clean(escape($_POST['beard']));
 
-    $sql = "UPDATE users SET `prayer` = '$fname', `marital` = '$email', `children` = '$abt', `hijab` = '$inst', `heigh` = '$age', `prof` = '$country', `qua` = '$nationality' WHERE `sn` = '$idd'";
+    $sql = "UPDATE users SET `prayer` = '$fname', `marital` = '$email', `children` = '$abt', `hijab` = '$inst', `height` = '$age', `prof` = '$country', `qual` = '$nationality', `beard` = '$beard' WHERE `sn` = '$idd'";
     $result = query($sql);
 
     //open otp page

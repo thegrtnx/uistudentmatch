@@ -319,7 +319,7 @@ include("component/head.php");
                         <div class="d-flex align-items-center ms-n5 mb-4">
 
                             <h4 class="display-6 fw-bold mb-0">£120/<small>year</small> <sub><small
-                                        style="font-size: 15px">Save £180</small>
+                                        style="font-size: 15px">Save £60</small>
                                 </sub></h4>
 
                         </div>
