@@ -21,12 +21,11 @@ include("component/head.php");
                         <h1 class="page__title">Privacy Policy</h1>
                         <p>Unistudents Match&nbsp;(the &ldquo;Company&rdquo;) respects the privacy concerns of the users
                             of
-                            its website, www.sunnahmatch.com and the services provided therein (the &ldquo;Site&rdquo;).
+                            its website, www.unistudents.com and the services provided therein (the &ldquo;Site&rdquo;).
                             The Company thus provides this privacy statement to explain what information is gathered
                             during a visit to the Site and how such information may be used.</p>
                         <p>Your use of the Company&rsquo;s services and this site are also governed by those of
-                            Unistudents Match,
-                            LLC, a California limited liability company. Please also review the Unistudents Match&reg;
+                            Unistudents Match, UK. Please also review the Unistudents Match&reg;
                             website
                             Terms of Use at&nbsp;https://unistudentsmatch.com/t&c which also govern use
                             of this
@@ -198,8 +197,8 @@ include("component/head.php");
                         <p><em style="color: red;">DISCLAIMER: This document and all of information contained herein are
                                 presented for informational purposes only. Nothing contained herein is intended as legal
                                 advice. The receipt or review of any information does not create an attorney-client
-                                relationship with Unistudents Match, LLC nor any attorney associated with Unistudents
-                                Match, LLC. Nothing in
+                                relationship with Unistudents Match, UK nor any attorney associated with Unistudents
+                                Match, UK. Nothing in
                                 this document is intended to be a substitute for legal advice obtained from an attorney
                                 licensed in the appropriate jurisdiction.</em></p>
 

@@ -65,8 +65,8 @@
                                     </div>
                                     <!-- /.widget-user-image -->
                                     <h3 class="widget-user-username"><?php echo ucwords($row['fullname']) ?></h3>
-                                    <h6 class="widget-user-desc">Joined:
-                                        <?php echo date('F d, Y', strtotime($row['date_reg'])); ?></h6>
+                                    <h6 class="widget-user-desc">Age:
+                                        <?php echo $row['age']."years old" ?></h6>
                                 </div>
                                 <div class="card-footer p-0">
                                     <ul class="nav flex-column">

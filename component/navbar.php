@@ -18,8 +18,8 @@
             <a href="./" class="nav-item nav-link me-5">Home</a>
             <a href="#about" class="nav-item nav-link me-3">About Us</a>
             <a href="#features" class="nav-item nav-link me-3">Why choose us?</a>
-            <a href="./contact" class="nav-item nav-link me-3">Contact Us</a>
-            <a href="./signup" class="nav-item nav-link me-3">Create a free account</a>
+            <a href="mailto: unistudentsmatch@outlook.com" class="nav-item nav-link me-3">Contact Us</a>
+            <a target="_blank" href="./signup" class="nav-item nav-link me-3">Create a free account</a>
         </div>
     </div>
     <a href="./signin" class="btn btn-primary px-3 d-none d-lg-block">Sign-In</a>
@@ -35,7 +35,7 @@
         <a href="#about" class="nav-item nav-link me-3">About Us</a>
         <a href="#features" class="nav-item nav-link me-3">Why choose us?</a>
         <a href="#pricing" class="nav-item nav-link me-3">Pricing</a>
-        <a href="./contact" class="nav-item nav-link me-3">Contact Us</a>
+        <a target="_blank" href="mailto: unistudentsmatch@outlook.com" class="nav-item nav-link me-3">Contact Us</a>
 
     </div>
     <a style="text-decoration: none;" href="dashboard/./" class="nav-item nav-link me-5">Welcome

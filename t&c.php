@@ -35,7 +35,8 @@ include("component/head.php");
                         </li>
                         <li>
                             <p><strong>Application</strong> means the software program provided by the Company
-                                downloaded by You through an Application Store's account to a Device, named Sunnah Match
+                                downloaded by You through an Application Store's account to a Device, named Unistudents
+                                Match
                             </p>
                         </li>
                         <li>
@@ -45,8 +46,8 @@ include("component/head.php");
                         </li>
                         <li>
                             <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;,
-                                &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Muslim Matrimony Co LTD,
-                                20-22 Wenlock Road, N17GU, London.</p>
+                                &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Unistudents Match, UK.
+                            </p>
                         </li>
                         <li>
                             <p><strong>Content</strong> refers to content such as text, images, or other information

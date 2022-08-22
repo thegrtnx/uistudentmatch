@@ -1,21 +1,28 @@
 $(document).ready(function () {
 
-
   //refral notice
   $("#ref").change(function () {
-    
     var ref = $("#ref").val();
 
-    if(ref == 'Others') {
-
+    if (ref == "Others") {
       $("#anref").show();
-
     } else {
-
       $("#anref").hide();
     }
-
   });
+
+
+   //gender change
+   $("#catgy").change(function () {
+    var gend = $("#catgy").val();
+
+    if (gend == "Female") {
+      $("#gdian").show();
+    } else {
+      $("#gdian").hide();
+    }
+  });
+
 
 
   //signup
@@ -29,16 +36,27 @@ $(document).ready(function () {
     var pword = $("#pword").val();
     var cpword = $("#cpword").val();
     var nref = $("#ref").val();
+    var age = $("#age").val();
+    var country = $("#country").val();
+    var nationality = $("#nationality").val();
 
-    if(nref == 'Others') {
+    if ($("#terms-conditions").prop('checked')) { 
 
-      var ref = $("#nref").val();
-      
-    } else {
+        if (nref == "Others") {
+          var ref = $("#nref").val();
+        } else {
+          var ref = $("#ref").val();
+        }
 
-      var ref = $("#ref").val();
-    }
 
+        if(catgy == 'Female') {
+
+          var tel = $("#tel").val();
+
+        } else {
+
+          var tel = 0;
+        }
 
     if (fname == "" || fname == null) {
       $("#fmsg").html("Kindly input your full name.");
@@ -55,48 +73,61 @@ $(document).ready(function () {
             if (inst == "" || inst == null) {
               $("#instmsg").html("Kindly input your institution name");
             } else {
-          if (pword == "" || pword == null) {
-            $("#pwmsg").html("Please create a secured password");
-          } else {
-            if (cpword == "" || cpword == null) {
-              $("#cpwmsg").html("Confirm your password");
-            } else {
-              if (pword != cpword) {
-                $("#cpwmsg").html("Password does not match");
+              if (pword == "" || pword == null) {
+                $("#pwmsg").html("Please create a secured password");
               } else {
-                $("#msg").html(
-                  '<img style="width: 100px; height: 100px" src="img/loading.gif">'
-                );
+                if (cpword == "" || cpword == null) {
+                  $("#cpwmsg").html("Confirm your password");
+                } else {
+                  if (pword != cpword) {
+                    $("#cpwmsg").html("Password does not match");
+                  } else {
+                    if(tel == null || tel == '' || tel == 0 && catgy == 'Female') {
+                      $("#telmsg").html("Kindly input your guardian contact number");
+                    } else {
+                      if(age == null || age == '' || age == 0) {
+                        $("#agemsg").html("Kindly input your age");
+                      } else {
+                    $("#msg").html(
+                      '<img style="width: 100px; height: 100px" src="img/loading.gif">'
+                    );
 
-                $.ajax({
-                  type: "post",
-                  url: "functions/init.php",
-                  data: {
-                    fname: fname,
-                    usname: usname,
-                    email: email,
-                    pword: pword,
-                    cpword: cpword,
-                    catgy, catgy,
-                    ref: ref,
-                    abt: abt,
-                    inst: inst
-                  },
-                  success: function (data) {
-                    $("#msg").html(data);
-                  },
-                });
+                    $.ajax({
+                      type: "post",
+                      url: "functions/init.php",
+                      data: {
+                        fname: fname,
+                        usname: usname,
+                        email: email,
+                        pword: pword,
+                        cpword: cpword,
+                        catgy, catgy,
+                        ref: ref,
+                        abt: abt,
+                        inst: inst,
+                        tel: tel,
+                        age: age,
+                        country: country,
+                        nationality: nationality
+                      },
+                      success: function (data) {
+                        $("#msg").html(data);
+                      },
+                    });
+                  }
+                }
               }
             }
           }
         }
       }
-        }
-      }
+    }
+  }
+    }
+    } else {
+      $("#msg").html("Please accept our terms and conditions to continue"); 
     }
   });
-
-
 
   //resend otp
   $("#rotp").click(function () {
@@ -118,7 +149,6 @@ $(document).ready(function () {
       },
     });
   });
-
 
   //verify otp
   $("#vsub").click(function () {
@@ -181,8 +211,6 @@ $(document).ready(function () {
   }*/
   });
 
-
-
   //signin
   $("#lsub").click(function () {
     var username = $("#luname").val();
@@ -209,8 +237,6 @@ $(document).ready(function () {
     }
   });
 
-
-
   //forgot
   $("#fsub").click(function () {
     var fgeml = $("#femail").val();
@@ -232,8 +258,6 @@ $(document).ready(function () {
       });
     }
   });
-
-
 
   //reset
   $("#updf").click(function () {
@@ -265,5 +289,4 @@ $(document).ready(function () {
       }
     }
   });
-
-})
+});

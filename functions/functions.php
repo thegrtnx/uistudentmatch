@@ -120,7 +120,7 @@ function usname_exist($usname) {
 
 
 /** VALIDATE USER REGISTRATION **/
-if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) && isset($_POST['email']) && isset($_POST['pword']) && isset($_POST['cpword']) && isset($_POST['ref']) && isset($_POST['inst']) && isset($_POST['abt'])) {
+if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) && isset($_POST['email']) && isset($_POST['pword']) && isset($_POST['cpword']) && isset($_POST['ref']) && isset($_POST['inst']) && isset($_POST['abt']) && isset($_POST['tel']) && isset($_POST['age']) && isset($_POST['country']) && isset($_POST['nationality'])) {
 
     $fname          = clean(escape($_POST['fname']));
     $usname         = clean(escape($_POST['usname']));
@@ -131,6 +131,11 @@ if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) &
     $ref            = clean(escape($_POST['ref']));
     $inst           = clean(escape($_POST['inst']));
     $abt            = clean(escape($_POST['abt']));
+    $tel            = clean(escape($_POST['tel']));
+    $age            = clean(escape($_POST['age']));
+    $country        = clean(escape($_POST['country']));
+    $nationality    = clean(escape($_POST['nationality']));
+    
 
    
         if(email_exist($email)) {
@@ -145,7 +150,7 @@ if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) &
             } else {
 
 
-                register($fname, $usname, $email, $pword, $ref, $caty, $inst, $abt);
+                register($fname, $usname, $email, $pword, $ref, $caty, $inst, $abt, $tel, $age, $country, $nationality);
                 
             }
 
@@ -156,7 +161,7 @@ if(isset($_POST['fname']) && isset($_POST['usname']) && isset($_POST['catgy']) &
     
 
 /** REGISTER USER **/
-function register($fname, $usname, $email, $pword, $ref, $caty, $inst, $abt) {
+function register($fname, $usname, $email, $pword, $ref, $caty, $inst, $abt, $tel, $age, $country, $nationality) {
 
     $fnam = escape($fname);
     $usname = escape($usname);
@@ -171,8 +176,8 @@ function register($fname, $usname, $email, $pword, $ref, $caty, $inst, $abt) {
         
     $activator = otp();
     
-    $sql = "INSERT INTO users(`idd`, `fullname`, `usname`, `email`, `password`, `role`, `date_reg`, `status`, `active`, `lastseen`, `ref`, `wallet`, `bio`, `inst`)";
-    $sql.= " VALUES('1', '$fnam', '$usname', '$emai', '$pwor', '$caty', '$datereg', '$activator', '0', '$datereg', '$ref', '0', '$abtt', '$inst')";
+    $sql = "INSERT INTO users(`idd`, `fullname`, `usname`, `email`, `password`, `role`, `date_reg`, `status`, `active`, `lastseen`, `ref`, `wallet`, `bio`, `inst`, `tel`, `age`, `country`, `nationality`)";
+    $sql.= " VALUES('1', '$fnam', '$usname', '$emai', '$pwor', '$caty', '$datereg', '$activator', '0', '$datereg', '$ref', '0', '$abtt', '$inst', '$tel', '$age', '$country', '$nationality')";
     $result = query($sql);
 
     //redirect to verify function
@@ -721,14 +726,21 @@ if(isset($_POST['msgbtn'])) {
     $b = date("Y-m-d h:i:s");
     $c = clean(escape($_POST['recmessage']));
 
+    $error_message = "You are not allowed to use foul and sexual languages. <br> Once you keep trying this, you will be banned from Unistudent Match";
+
+    if (str_contains($a, 'sex') || str_contains($a, 'nude') || str_contains($a, 'pussy') || str_contains($a, 'romance') || str_contains($a, 'condom') || str_contains($a, 'naked') || str_contains($a, 'intercourse') || str_contains($a, 'loving making') || str_contains($a, 'lovingmaking') || str_contains($a, 'masturbation') || str_contains($a, 'nipple') || str_contains($a, 'dick') || str_contains($a, 'fuck') || str_contains($a, 'kiss') || str_contains($a, 'hardcore') || str_contains($a, 'romantic')) { 
+        echo validator($error_message);
+    } else {
+
     user_details();
 
     $d = $t_users['usname'];
 
    $sql = "INSERT INTO chat(`name`, `message`, `recipient`, `created_on`)";
-   $sql.="VALUES('$d', '$a', '$c', '$b')";
+   //$sql.="VALUES('$d', '$a', '$c', '$b')";
 
-   $res = query($sql);
+   //$res = query($sql);
 
-   redirect("./message?user=$c");
+   //redirect("./message?user=$c");
+    }
 }
