@@ -691,11 +691,15 @@
                                         ?>
 
                                         <li class="nav-item justify-content-center text-center mb-2 mt-2">
+                                            <a href="./userprofile?user=<?php echo $row['usname'] ?>"
+                                                class="btn btn-primary text-white">View Profile
+                                            </a>
                                             <a href="./message?user=<?php echo $row['usname'] ?>"
-                                                class="btn btn-primary text-white">Send a
+                                                class="btn btn-primary text-white mr-2">Send a
                                                 message
                                             </a>
                                         </li>
+
 
                                         <?php
                                         }

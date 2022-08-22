@@ -38,19 +38,28 @@
                                         $sql = "SELECT * FROM `chat` WHERE `recipient` LIKE '%%' AND `name` = '$you' GROUP BY `recipient` desc";
                                         $res = query($sql);
                                         while($row = mysqli_fetch_array($res)) {
+
+                                            if($row['recipient'] == $you) {
+
+                                                $reciver = $row['name'];
+
+                                            } else {
+
+                                                $reciver = $row['recipient'];
+                                            }
                                             
                                         ?>
 
                                         <div class="comment-text mb-4">
-                                            <span class="username">
-                                                <?php echo $row['recipient'] ?>
+                                            <span class="username mb-3">
+                                                <?php echo ucfirst($reciver) ?>
                                                 <span
                                                     class="text-muted float-right"><?php echo date('F d, Y - h:m:sa', strtotime($row['created_on'])); ?></span>
                                             </span><!-- /.username -->
                                             <?php echo $row['message'] ?>
                                             <br />
-                                            <a href="./message?user=<?php echo $row['recipient'] ?>"
-                                                class="btn btn-primary text-white">Reply Message
+                                            <a href="./message?user=<?php echo $reciver ?>"
+                                                class="btn btn-primary text-white mt-3">Reply Message
                                             </a>
                                         </div>
                                         <!-- /.comment-text -->
