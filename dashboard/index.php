@@ -8,6 +8,145 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+
+            <?php 
+            if($t_users['wallet'] > 0 && $t_users['marital'] == null) {
+
+            ?>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <!-- /.col -->
+                        <div class="col-md-12">
+                            <div class="card">
+                                <h3 class="fw-bold mx-3 mt-4">Let's get to know you more</h3>
+                                <p class="fw-bold mx-3">You can leave any field empty if you prefer not to say</p>
+                                <div class=" card-body">
+                                    <div class="tab-content">
+
+                                        <div class="active tab-pane" id="settings">
+                                            <form class="form-horizontal">
+                                                <div class="form-group row">
+                                                    <label for="inputName" class="col-sm-2 col-form-label">Prayer
+                                                        Sect</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="prayer" id="prayer" class="form-control">
+                                                            <option>Prefer not to say</option>
+                                                            <option>Sunni</option>
+                                                            <option>Shia</option>
+                                                            <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputEmail" class="col-sm-2 col-form-label">Marital
+                                                        Status</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="marital" id="marital" class="form-control">
+                                                            <option>Prefer not to say</option>
+                                                            <option>Single</option>
+                                                            <option>Married</option>
+                                                            <option>Divorced</option>
+                                                            <option>Windowed</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label for="inputExperience"
+                                                        class="col-sm-2 col-form-label">Children</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="children" id="children" class="form-control">
+                                                            <option>Prefer not to say</option>
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputSkills" class="col-sm-2 col-form-label">Observes
+                                                        Hijab</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="hijab" id="hijab" class="form-control">
+                                                            <option>Prefer not to say</option>
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Height</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="height"
+                                                            placeholder="Leave empty to prefer not to say">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Beard</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="beard" id="beard" class="form-control">
+                                                            <option>Prefer not to say</option>
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Profession</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="prof"
+                                                            placeholder="Leave empty to prefer not to say">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="inputSkills"
+                                                        class="col-sm-2 col-form-label">Qualification</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="qual"
+                                                            placeholder="Leave empty to prefer not to say">
+                                                    </div>
+                                                </div>
+
+                                                <input type="text" value="<?php echo $t_users['sn'] ?>" id="idd" hidden>
+
+                                                <p id="msg"></p>
+
+                                                <div class="form-group row">
+                                                    <div class="offset-sm-2 col-sm-10">
+                                                        <button type="button" id="subbeddnn"
+                                                            class="btn btn-primary">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- /.tab-pane -->
+                                    </div>
+                                    <!-- /.tab-content -->
+                                </div><!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+            <?php 
+
+            } else {
+            ?>
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
@@ -722,6 +861,10 @@
 
         </div>
         <!-- /.content-wrapper -->
+
+        <?php
+            }
+            ?>
 
         <?php include("component/footer.php") ?>
 

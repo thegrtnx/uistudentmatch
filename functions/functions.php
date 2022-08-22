@@ -769,3 +769,27 @@ if(isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['abt']) && i
     echo '<script>window.location.href ="./profile"</script>';
 
 }
+
+
+//more details profile
+if(isset($_POST['prayer']) && isset($_POST['marital']) && isset($_POST['children']) && isset($_POST['hijab']) && isset($_POST['heigh']) && isset($_POST['pro']) && isset($_POST['qua']) && isset($_POST['idd'])) {
+
+      
+    $fname          = clean(escape($_POST['prayer']));
+    $email          = clean(escape($_POST['marital']));
+    $inst           = clean(escape($_POST['children']));
+    $abt            = clean(escape($_POST['hijab']));
+    $age            = clean(escape($_POST['heigh']));
+    $country        = clean(escape($_POST['pro']));
+    $nationality    = clean(escape($_POST['qua']));
+    $idd            = clean(escape($_POST['idd']));
+
+    $sql = "UPDATE users SET `prayer` = '$fname', `marital` = '$email', `children` = '$abt', `hijab` = '$inst', `heigh` = '$age', `prof` = '$country', `qua` = '$nationality' WHERE `sn` = '$idd'";
+    $result = query($sql);
+
+    //open otp page
+    echo 'Loading... Please Wait!';
+    echo '<script>alert("Details Saved Successfully");</script>';
+    echo '<script>window.location.href ="./"</script>';
+
+}

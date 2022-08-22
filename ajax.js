@@ -349,4 +349,40 @@ $(document).ready(function () {
       }
     }
   });
+
+
+   //details
+   $("#subbeddnn").click(function () {
+    var prayer = $("#prayer").val();
+    var marital = $("#marital").val();
+    var children = $("#children").val();
+    var hijab = $("#hijab").val();
+    var height = $("#height").val();
+    var beard = $("#beard").val();
+    var prof = $("#prof").val();
+    var qual = $("#qual").val();
+    var idd = $("#idd").val();
+
+    if (height == "" || height == null) {
+      var heigh = 'Prefer not to say';
+    } else {
+      if (prof == "" || prof == null) {
+        var pro = 'Prefer not to say';
+      } else {
+        if (qual == "" || qual == null) {
+          var qua = 'Prefer not to say';
+        } else {
+          
+          $.ajax({
+            type: "post",
+            url: "../functions/init.php",
+            data: { prayer: prayer, marital: marital, children: children, hijab: hijab, heigh: heigh, pro: pro, qua: qua, idd: idd },
+            success: function (data) {
+              $("#msg").html(data);
+            },
+          });
+        }
+      }
+    }
+  });
 });

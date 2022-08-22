@@ -17,11 +17,11 @@ if(!isset($_GET['user'])) {
 
     if($row['role'] == 'Male') {
 
-        $pix = '../img/female.png';
+        $pix = '../img/male.png';
   
       } else {
   
-        $pix = '../img/male.png';
+        $pix = '../img/female.png';
   
       }
 }
