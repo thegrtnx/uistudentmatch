@@ -748,9 +748,8 @@ if(isset($_POST['msgbtn'])) {
 
 
 //validate edit profile
-if(isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['abt']) && isset($_POST['inst']) && isset($_POST['age']) && isset($_POST['country']) && isset($_POST['nationality']) && isset($_POST['idd']) && isset($_POST['prayer']) && isset($_POST['marital']) && isset($_POST['children']) && isset($_POST['hijab']) && isset($_POST['heigh']) && isset($_POST['pro']) && isset($_POST['idd']) && isset($_POST['beard'])) {
-
-      
+if(isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['abt']) && isset($_POST['inst']) && isset($_POST['age']) && isset($_POST['country']) && isset($_POST['nationality']) && isset($_POST['prayer']) && isset($_POST['marital']) && isset($_POST['children']) && isset($_POST['hijab']) && isset($_POST['heigh']) && isset($_POST['pro']) && isset($_POST['idr']) && isset($_POST['beard'])) {
+    
     $fname          = clean(escape($_POST['fname']));
     $email          = clean(escape($_POST['email']));
     $inst           = clean(escape($_POST['inst']));
@@ -758,8 +757,7 @@ if(isset($_POST['fname']) && isset($_POST['email']) && isset($_POST['abt']) && i
     $age            = clean(escape($_POST['age']));
     $country        = clean(escape($_POST['country']));
     $nationality    = clean(escape($_POST['nationality']));
-    $idd            = clean(escape($_POST['idd']));
-
+    $idd            = clean(escape($_POST['idr']));
     $pray           = clean(escape($_POST['prayer']));
     $mari           = clean(escape($_POST['marital']));
     $child          = clean(escape($_POST['children']));

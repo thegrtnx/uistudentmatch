@@ -154,7 +154,7 @@ $(document).ready(function () {
     var beard = $("#beard").val();
     var prof = $("#prof").val();
     var qual = $("#qual").val();
-    var idd = $("#idd").val();
+    var idr = $("#idd").val();
     
 
     if (height == "" || height == null) {
@@ -185,7 +185,7 @@ $(document).ready(function () {
 
           var qua = $("#qual").val();
         }
-
+        
     if (fname == "" || fname == null) {
       $("#fmsg").html("Kindly input your full name.");
     } else {
@@ -214,7 +214,6 @@ $(document).ready(function () {
                         age: age,
                         country: country,
                         nationality: nationality,
-                        idd: idd,
                         prayer: prayer, 
                         marital: marital, 
                         children: children, 
@@ -222,7 +221,7 @@ $(document).ready(function () {
                         heigh: heigh, 
                         pro: pro, 
                         qua: qua, 
-                        idd: idd, 
+                        idr: idr, 
                         beard: beard
                       },
                       success: function (data) {
