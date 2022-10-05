@@ -83,7 +83,7 @@ input[type=number] {
                     </form>
                 </div>
 
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="col-lg-12 wow fadeIn" id="signup" data-wow-delay="0.1s">
 
                     <div id="signup">
                         <h1 class="display-6 mb-2 fw-bold">
@@ -680,13 +680,10 @@ input[type=number] {
                     </div>
                 </div>
 
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 450px" id="imgg">
-                    <div class="position-relative rounded overflow-hidden h-100">
-                        <img src="img/sign.jpg" class="position-relative w-100 h-100">
-                    </div>
-                </div>
+
             </div>
         </div>
+    </div>
     </div>
     <!-- Contact End -->
 
@@ -740,7 +737,7 @@ input[type=number] {
     //open verify page by default
     function otpVerify() {
         document.getElementById('verify').style.display = 'block';
-        document.getElementById('imgg').style.display = 'none';
+        document.getElementById('signup').style.display = 'none';
     }
 
     //close signup page
